@@ -1,0 +1,83 @@
+nav{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.55);
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+}
+body{
+    width: auto;
+    height: 100%;
+    background-image: url('../images/back.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+   
+}
+#list{
+    
+    width: auto;
+    height: 500px;
+    margin: 150px 100px 0px 100px;
+}
+#meniu{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+    background-color: #0b5e4d;
+    height: 80px;
+}
+.styled-table {
+    font-weight: bold;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+.styled-table tbody tr:nth-of-type(odd) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table{
+    width: 100%;
+}
+table, tr, td{
+    border-right: 1px solid #dddddd;
+}
+#pav{
+    text-decoration: none;
+    color: #000000;
+    font-size: 48px; 
+    font-family: 'Signika', sans-serif; 
+    padding-bottom: 10px;
+    
+}
+a{
+    text-decoration: none;
+    color: #222222;
+    font-size: 36px; 
+    font-family: 'Signika', sans-serif; 
+    padding-bottom: 10px;
+}
