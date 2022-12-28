@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/',[CattleController::class,'list']);
+Route::resource('main', CattleController::class);
+Route::post('main',[CattleController::class, 'store'])->name('cattle.form');
