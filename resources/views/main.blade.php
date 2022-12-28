@@ -40,71 +40,27 @@
                     <th>Kiek atsivesta veršiuku</th>
                 </tr>
             </thead>
+            @foreach ($cattle as $cat)
             <tbody>
                 <tr>
-                    <td>3216549</td>
-                    <td>5469992</td>
-                    <td>Karvė</td>
-                    <td>9/12/2018</td>
-                    <td>4 Metai</td>
-                    <td>Simentalas</td>
-                    <td>Mėsinis</td>
-                    <td>Taip</td>
-                    <td>14/01/2023</td>
-                    <td>14/01/2024</td>
-                    <td>29/11/2020</td>
-                    <td>2</td>
-                    
-                </tr>
-                <tr>
-                    <td>6168787</td>
-                    <td>5469992</td>
-                    <td>Jautis</td>
-                    <td>9/12/2018</td>
-                    <td>4 Metai</td>
-                    <td>Simentalas</td>
-                    <td>Mėsinis</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>6214984</td>
-                    <td>3216549</td>
-                    <td>Veršiukas</td>
-                    <td>25/09/2021</td>
-                    <td>1 Metai</td>
-                    <td>Simentalas</td>
-                    <td>Pieninis</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>5168971</td>
-                    <td>3215495</td>
-                    <td>Telyčaitė</td>
-                    <td>25/12/2020</td>
-                    <td>2 Metai</td>
-                    <td>Žalmargis</td>
-                    <td>Pieninis</td>
-                    <td>Taip</td>
-                    <td>29/10/2023</td>
-                    <td>05/11/2024</td>
-                    <td>-</td>
-                    <td>-</td>
+                  <td>{{$cat['GalvijoNr']}}</td>
+                  <td>{{$cat['MotinosNr']}}</td>
+                  <td>{{$cat['Tipas']}}</td>
+                  <td>{{$cat['GimimoData']}}</td>
+                  <td>{{$cat['Amzius']}}</td>
+                  <td>{{$cat['Veisl']}}</td>
+                  <td>{{$cat['PM']}}</td>
+                  <td>{{$cat['Versing']}}</td>
+                  <td>{{$cat['VersData']}}</td>
+                  <td>{{$cat['SeklData']}}</td>
+                  <td>{{$cat['LastVers']}}</td>
+                  <td>{{$cat['AtsivestVers']}}</td>
                 </tr>
             </tbody>
+            @endforeach
         </table>
+
     </div>
-
-        
-        
-
     </div>
             
 </body>
