@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('MotinosNr');
             $table->string('Tipas');
             $table->date('GimimoData');
-            $table->integer('Amzius');
+            $table->decimal('Amzius',7,1);
             $table->string('Veisl');
             $table->string('PM');
             $table->string('Versing');

@@ -7,19 +7,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cattle;
+use Carbon\Carbon;
 
 class CattleController extends Controller
 {
-    function list(){
-        $data=Cattle::all();  
-        return view('main',['cattle'=>$data]);
-       }
-
+   
     public function index()
     {
-        return view(
-         'modal'
-        );
+    
+        $data=Cattle::all();  
+        return view('main',['cattle'=>$data]);
+
+     
     }
 
     /**
@@ -40,13 +39,17 @@ class CattleController extends Controller
      */
     public function store(Request $request)
     {
+        $date1 = Carbon::parse($request->input('GimimoData'));
+        $date2 = Carbon::today();
+        $date = $date1->diffInDays($date2);
+        $year = 365;
+        $date = $date / $year;
+        
         $this->validate($request,[
             'GalvijoNr' => 'required',
             'MotinosNr' => 'required',
-            'Tipas' => 'required',
             'GimimoData' => 'required',
             'Veisl' => 'required',
-            'PM' => 'required',
             'versing' => 'required',
 
         ]);
@@ -57,7 +60,7 @@ class CattleController extends Controller
         $catl->MotinosNr = $request->input('MotinosNr');
         $catl->Tipas = $request->input('Tipas');
         $catl->GimimoData = $request->input('GimimoData');
-        $catl->Amzius = $request->input('Amzius');
+        $catl->Amzius = $date;
         $catl->Veisl = $request->input('Veisl');
         $catl->PM = $request->input('PM');
         $catl->versing = $request->input('versing');
@@ -68,7 +71,7 @@ class CattleController extends Controller
 
         $catl->save();
         
-        return redirect('/')->with('success','Duomenys išsaugoti');
+       return redirect('/')->with('success','Duomenys sėkmingai išsaugoti');
     }
 
     /**
@@ -79,18 +82,33 @@ class CattleController extends Controller
      */
     public function show($id)
     {
-        //
+        $data=Cattle::find($id);
+        
+        return view('edit',['cattles'=>$data]);
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
+     * 
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+       $data = Cattle::find($request->id);
+        $data->GalvijoNr=$request->GalvijoNr;
+        $data->MotinosNr=$request->input('MotinosNr');
+        $data->Tipas=$request->input('Tipas');
+        $data->GimimoData=$request->input('GimimoData');
+        $data->Veisl=$request->input('Veisl');
+        $data->PM=$request->input('PM');
+        $data->versing=$request->input('versing');
+        $data->VersData=$request->input('VersData');
+        $data->SeklData=$request->input('SeklData');
+        $data->LastVers=$request->input('LastVers');
+        $data->AtsivestVers=$request->input('AtsivestVers');
+        $data->save();
+        return redirect('main');
     }
 
     /**
@@ -102,7 +120,8 @@ class CattleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        
     }
 
     /**
@@ -113,6 +132,8 @@ class CattleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=Cattle::find($id);
+        $data->delete();
+       return redirect('/');
     }
 }

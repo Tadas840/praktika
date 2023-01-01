@@ -13,10 +13,15 @@ use App\Http\Controllers\CattleController;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
 
-Route::get('/',[CattleController::class,'list']);
+
+Route::get('/',[CattleController::class,'index']);
 Route::resource('main', CattleController::class);
-Route::post('main',[CattleController::class, 'store'])->name('cattle.form');
+Route::get('delete/{id}', [CattleController::Class,'destroy']);
+Route::get('edit/{id}',[CattleController::Class,'show']);      
+Route::put('edit/{id}',[CattleController::Class,'edit']);   
+
+
+Route::get('/Veisles', function(){
+    return view('Veisles');
+});

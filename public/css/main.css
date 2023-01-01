@@ -9,7 +9,7 @@ nav{
     min-height: 80px;
 }
 body{
-    width: 100%;
+    width: 99%;
     height: 100%;
     background-image: url('../images/back.jpg');
     background-repeat: no-repeat;
@@ -21,16 +21,16 @@ body{
     
     width: auto;
     height: 500px;
-    margin: 150px 100px 0px 100px;
+    margin: 250px 100px 0px 100px;
 }
 #meniu{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
     background-color: #0b5e4d;
-    height: 80px;
+    height: 40px;
     width: 50cm;
     display: table-cell;
     vertical-align: middle;
-    font-size: 24px;
+    font-size: 20px;
     padding-left: 5px;
 }
 .styled-table {
@@ -85,4 +85,26 @@ a{
     text-decoration: none;
     color: #222222; 
     font-family: 'Signika', sans-serif; 
+}
+a:hover,
+a:focus {
+  color: #ffffff;
+}
+.navigation{
+    background-color: transparent;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.55);
+}
+#edit{
+    font-weight: bold;
+}
+#error{
+    color: #ff0000;
+    font-weight: bold;
+
+}
+#success{
+    color: #003f00;
+    font-weight: bold;
 }
