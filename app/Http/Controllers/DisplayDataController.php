@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Veisle;
+use Yajra\DataTables\DataTables;
+use App\Models\Cattle;
 
-class VeisleController extends Controller
+class DisplayDataController extends Controller
 {
- 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data = Veisle::all();
-        return view('species',['spec'=>$data]);
+    {    
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +25,7 @@ class VeisleController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -37,17 +36,7 @@ class VeisleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'veislname' => 'required',
-
-        ]);
-        $veisl = new Veisle;
-      
-        $veisl->veislname = $request -> input('veislname');
-
-        $veisl->save();
-
-        return redirect('/species');
+        //
     }
 
     /**
@@ -56,26 +45,35 @@ class VeisleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        $data=Veisle::find($id);
-        
-        return view('editspec',['spec'=>$data]);
+        if ($request->ajax()) {
+            $data = Cattle::select('*');
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+       
+                        $updateButton = "<a href='/edit/$row->id' class='btn btn-sm btn-info'><i class='fa fa-edit'></i></a>";
+                        $deleteButton = "<a class='btn btn-sm btn-danger delete' data-id='".$row->id."'><i class='fa fa-times'></i></a>";
+         
+                         return $updateButton." ".$deleteButton;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+        return view('datatable');
+
     }
-    
 
     /**
      * Show the form for editing the specified resource.
-     * @param  \Illuminate\Http\Request  $request
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit($id)
     {
-        $data = Veisle::find($request->id);
-        $data->veislname=$request->input('veislname');
-        $data->save();
-        return redirect('species');
+        //
     }
 
     /**
@@ -87,7 +85,8 @@ class VeisleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     
+
     }
 
     /**
@@ -96,10 +95,15 @@ class VeisleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $data=Veisle::find($id);
-        $data->delete();
-        return redirect('/species');
+         $catdata = Cattle::find($request->id);
+
+         $catdata->delete();
+         
+     
+
+         return redirect('/'); 
+     
     }
 }

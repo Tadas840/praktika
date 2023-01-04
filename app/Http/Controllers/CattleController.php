@@ -60,10 +60,26 @@ class CattleController extends Controller
 
         ]);
        
-            $sdate = $request->input('SeklData');
-            $tdate = Carbon::today();
-            $vdate = Carbon::parse($sdate) ->addMonth(9.3);
-        
+            
+
+            $versing = $request->input('versing');
+            $SeklData = $request->input('SeklData');
+            $VersData = $request->input('VersData');
+            $LastVers= $request->input('LastVers');
+            $AtsivestVers= $request->input('AtsivestVers');
+            $vdate = Carbon::parse($SeklData)->addMonth(9);
+
+           if(($request->input('Tipas') == 'Jautis') || ($request->input('Tipas') == 'Jautukas')){
+               $versing = 'Ne';
+               $SeklData = null;
+               $VersData = null;
+               $LastVers = null;
+               $vdate = null;
+           }
+            if($request->input('Tipas') == 'Telycaite'){
+               $LastVers = null;
+               $vdate = null;
+            }
 
         
         $catl = new Cattle;
@@ -74,11 +90,11 @@ class CattleController extends Controller
         $catl->Amzius = $date;
         $catl->Veisl = $request->input('Veisl');
         $catl->PM = $request->input('PM');
-        $catl->versing = $request->input('versing');
-        $catl->SeklData= $request->input('SeklData');
+        $catl->versing = $versing;
+        $catl->SeklData= $SeklData;
         $catl->VersData= $vdate;
-        $catl->LastVers= $request->input('LastVers');
-        $catl->AtsivestVers= $request->input('AtsivestVers');
+        $catl->LastVers= $LastVers;
+        $catl->AtsivestVers= $AtsivestVers;
 
         $catl->save();
     
@@ -94,8 +110,14 @@ class CattleController extends Controller
     public function show($id)
     {
         $data=Cattle::find($id);
-        
-        return view('edit',['cattles'=>$data]);
+        $data1 = Veisle::all();
+
+        $params = 
+        [
+            'cattles'=>$data,
+            'spec'=>$data1, 
+        ];
+        return view('edit') -> with($params);
     }
 
     /**
@@ -143,9 +165,7 @@ class CattleController extends Controller
      */
     public function destroy($id)
     {
-        $data=Cattle::find($id);
-        $data->delete();
-       return redirect('/');
+      
     }
 
 }

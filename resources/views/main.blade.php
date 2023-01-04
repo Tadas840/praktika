@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/main.js') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
     <title>Galvijų apskaitos kompiuterizuota sistema</title>
 </head>
 <body>
@@ -17,7 +20,7 @@
    
     <div id="list" class="container">
         <div id="meniu">
-          <a data-bs-toggle="modal" data-bs-target="#Modal">Pridėti Galviją</a>
+          <a class="button" data-bs-toggle="modal" data-bs-target="#Modal">Pridėti Galviją</a><br>
         </div>
             <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -61,7 +64,6 @@
                                     <option value="{{$spd['veislname']}}">{{$spd['veislname']}}</option>
                                      @endforeach
                                     </select>
-                                 </select>
                             </div>
         
                             <div class="form-group">
@@ -75,8 +77,8 @@
                             <div class="form-group">
                                 <label>Ar veršinga?</label>
                                 <select name="versing">
-                                    <option value="Taip">Taip</option>
                                     <option value="Ne">Ne</option>
+                                    <option value="Taip">Taip</option>
                                 </select>
                             </div>
         
@@ -127,9 +129,12 @@
             @endif
                 </div>
         
-        
-    <div>
-        <table class="styled-table">
+        <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @include('datatable')
+        {{-- <table id="Table" class="styled-table" class="display">
             <thead>
                 <tr>
                     <th>Galvijo ID</th>
@@ -146,8 +151,9 @@
                     <th>Kiek atsivesta veršiuku</th>
                     <th></th>
                 </tr>
-            </thead>
-        @foreach ($cattle as $cat)
+            </thead> --}}
+            
+        {{-- @foreach ($cattle as $cat)
             <tbody>
                 <tr>
                     <td>{{$cat['GalvijoNr']}}</td>
@@ -168,11 +174,13 @@
                     </td>
                 </tr>
             </tbody>
-        @endforeach
+        @endforeach --}}
         </table>
+       
+            </div>
+        </div>
 
     </div>
-    </div>
-            
+    </div> 
 </body>
 </html>

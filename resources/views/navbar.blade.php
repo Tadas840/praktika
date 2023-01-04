@@ -11,16 +11,17 @@
     <nav>
         <header class="navbar">
             <div class="container">
-                <a id='pav' href=".">ĮMONĖS PAVADINIMAS/ NEPAMIRŠTI SUTVARKYTI FRONTEND</a>
+                <a id='pav' href="/">Pieno ūkis</a>
             </div>
+            
+                <div class="navg"> 
+                    <a class="button" href="/">Sąrašas</a>
+                    <a class="button" href="/species">Veislės</a>
+                    <a><i class="fa fa-user-circle-o button" href="."></i></a>
+                </div>
+        
         </header>
     </nav>
-    <nav>
-        <div class="navigation">
-            <a>NavBar UŽDĖTI STILIU</a><br>
-            <a href="/main">Pradžia</a>
-            <a href="/species">Galvijų Veislės</a>
-        </div>
-    </nav>
+    
 </body>
 </html>

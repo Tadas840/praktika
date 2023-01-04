@@ -22,11 +22,11 @@ return new class extends Migration
             $table->decimal('Amzius',7,1);
             $table->string('Veisl');
             $table->string('PM');
-            $table->string('Versing');
-            $table->date('VersData');
-            $table->date('SeklData');
-            $table->date('LastVers');
-            $table->integer('AtsivestVers');
+            $table->string('Versing')->nullable();
+            $table->date('VersData')->nullable();
+            $table->date('SeklData')->nullable();
+            $table->date('LastVers')->nullable();
+            $table->integer('AtsivestVers')->nullable();
             $table->timestamps();
         });
     }

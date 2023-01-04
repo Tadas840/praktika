@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,7 +20,7 @@
     <div id="list" class="container">
         <div>
             <div id="meniu">
-                <a data-bs-toggle="modal" data-bs-target="#Modal">Pridėti Veislę</a>
+                <a class="button" data-bs-toggle="modal" data-bs-target="#Modal">Pridėti Veislę</a>
               </div>
               <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -55,8 +58,8 @@
                 <tr> 
                     <td>{{$sp['veislname']}}</td>
                     <td>
-                        <a class="fa fa-edit" style="font-size:20px;"  href="{{url("editspec/".$sp->id)}}"></a>
-                        <a class="fa fa-times" style="font-size:24px;color:red"  onclick="return confirm('Ar tikrai norite ištrinti įrašą?')" href="{{url("deleteveisl/".$sp->id)}}"></a>
+                        <a class="btn btn-sm btn-info"  href="{{url("editspec/".$sp->id)}}"><i class='fa fa-edit'></i></a>
+                        <a class="btn btn-sm btn-danger" onclick="return confirm('Ar tikrai norite ištrinti įrašą?')" href="{{url("deleteveisl/".$sp->id)}}"><i class='fa fa-times'></i></a>
                     </td>
                 </tr>
             </tbody>

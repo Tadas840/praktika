@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    
     
     <title>Document</title>
 </head>
@@ -50,7 +54,14 @@
                     </td>
                     <td><input type="date" name="GimimoData" value="{{$cattles['GimimoData']}}"></td>
                     <td>{{$cattles['Amzius']}}</td>
-                    <td><input type="text" style="width: 80px" name="Veisl" value="{{$cattles['Veisl']}}"></td>
+                    <td>
+                        <select name="Veisl">
+                            @foreach($spec as $spd)
+                           <option value="{{$spd['veislname']}}">{{$spd['veislname']}}</option>
+                            @endforeach
+                           </select>
+                    
+                    </td>
                     <td>
                         <select name="PM" value="{{$cattles['PM']}}">
                             <option value="Mesinis">Mesinis</option>
@@ -67,7 +78,7 @@
                     <td><input type="date" name="SeklData" value="{{$cattles['SeklData']}}"></td>
                     <td><input type="date" name="LastVers" value="{{$cattles['LastVers']}}"></td>
                     <td><input style="width:30px" type="number" name="AtsivestVers" value="{{$cattles['AtsivestVers']}}"></td>
-                    <td> <button style="" type="submit"><i style="font-size:16px; color:green;" class="fa fa-check"></i></button></td>
+                    <td> <button type="submit"><i style="font-size:16px; color:green;" class="fa fa-check"></i></button></td>
                 </tr>
             </tbody>
         </table>

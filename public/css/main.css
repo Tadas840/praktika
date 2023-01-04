@@ -1,6 +1,6 @@
 nav{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.55);
-    background: transparent;
+    background: white;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,9 +9,11 @@ nav{
     min-height: 80px;
 }
 body{
-    width: 99%;
-    height: 100%;
-    background-image: url('../images/back.jpg');
+    width: auto;
+    height: auto;
+    /* background-image: url('../images/back.jpg');  */
+    background-color: white;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -20,18 +22,17 @@ body{
 #list{
     
     width: auto;
-    height: 500px;
+    height: auto;
     margin: 250px 100px 0px 100px;
 }
 #meniu{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
     background-color: #0b5e4d;
-    height: 40px;
-    width: 50cm;
+    height: auto;
+    width: auto;
     display: table-cell;
     vertical-align: middle;
     font-size: 20px;
-    padding-left: 5px;
 }
 .styled-table {
     width: auto;
@@ -40,7 +41,7 @@ body{
     margin: 25px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    min-width: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
@@ -68,7 +69,7 @@ body{
 }
 
 .styled-table{
-    width: 100%;
+    width: auto;
 }
 table, tr, td{
     border-right: 1px solid #dddddd;
@@ -90,12 +91,7 @@ a:hover,
 a:focus {
   color: #ffffff;
 }
-.navigation{
-    background-color: transparent;
-    margin-top: 100px;
-    padding-bottom: 20px;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,.55);
-}
+
 #edit{
     font-weight: bold;
 }
@@ -107,4 +103,29 @@ a:focus {
 #success{
     color: #003f00;
     font-weight: bold;
+}
+.navg{
+    margin: auto;
+    text-decoration: none;
+    
+}
+body{
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+.button {
+    
+    width: auto;
+    height: auto;
+    background: #0b5e4d;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    color: #000000;
+    font-weight: bold;
+    line-height: 25px;
+}
+.button:hover{
+    color: white;
 }
