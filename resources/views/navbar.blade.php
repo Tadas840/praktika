@@ -19,7 +19,7 @@
         <div class="navigation">
             <a>NavBar UŽDĖTI STILIU</a><br>
             <a href="/main">Pradžia</a>
-            <a href="/Veisles">Galvijų Veislės</a>
+            <a href="/species">Galvijų Veislės</a>
         </div>
     </nav>
 </body>

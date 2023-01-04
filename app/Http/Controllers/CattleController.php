@@ -7,16 +7,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cattle;
+use App\Models\Veisle;
 use Carbon\Carbon;
 
 class CattleController extends Controller
 {
-   
+
     public function index()
     {
     
         $data=Cattle::all();  
-        return view('main',['cattle'=>$data]);
+        $data2=Veisle::all();
+
+        $params =
+        [
+        'cattle' => $data,
+        'specdata' => $data2,    
+        ];
+        return view('main')->with($params);
 
      
     }
@@ -49,13 +57,16 @@ class CattleController extends Controller
             'GalvijoNr' => 'required',
             'MotinosNr' => 'required',
             'GimimoData' => 'required',
-            'Veisl' => 'required',
-            'versing' => 'required',
 
         ]);
+       
+            $sdate = $request->input('SeklData');
+            $tdate = Carbon::today();
+            $vdate = Carbon::parse($sdate) ->addMonth(9.3);
+        
 
+        
         $catl = new Cattle;
-
         $catl->GalvijoNr = $request->input('GalvijoNr');
         $catl->MotinosNr = $request->input('MotinosNr');
         $catl->Tipas = $request->input('Tipas');
@@ -64,13 +75,13 @@ class CattleController extends Controller
         $catl->Veisl = $request->input('Veisl');
         $catl->PM = $request->input('PM');
         $catl->versing = $request->input('versing');
-        $catl->VersData= $request->input('VersData');
         $catl->SeklData= $request->input('SeklData');
+        $catl->VersData= $vdate;
         $catl->LastVers= $request->input('LastVers');
         $catl->AtsivestVers= $request->input('AtsivestVers');
 
         $catl->save();
-        
+    
        return redirect('/')->with('success','Duomenys sėkmingai išsaugoti');
     }
 
@@ -136,4 +147,5 @@ class CattleController extends Controller
         $data->delete();
        return redirect('/');
     }
+
 }

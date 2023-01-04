@@ -56,7 +56,12 @@
         
                             <div class="form-group">
                                 <label>Veislė</label>
-                                <input type="text" name="Veisl" class="form-control">
+                                <select name="Veisl">
+                                     @foreach($specdata as $spd)
+                                    <option value="{{$spd['veislname']}}">{{$spd['veislname']}}</option>
+                                     @endforeach
+                                    </select>
+                                 </select>
                             </div>
         
                             <div class="form-group">
@@ -79,7 +84,6 @@
                                 <label>Veršiavimosi Data</label>
                                 <input type="date" name="VersData" class="form-control">
                             </div>
-        
                             <div class="form-group">
                                 <label>Sėklinimo Data</label>
                                 <input type="date" name="SeklData" class="form-control">
@@ -136,8 +140,8 @@
                     <th>Veislė</th>
                     <th>Pieninis/Mėsinis</th>
                     <th>Ar veršinga?</th>
-                    <th>Numatoma veršiavimosi data</th>
-                    <th>Numatoma sėklinimo data</th>
+                    <th>Sėklinimo data</th>
+                    <th>Veršiavimosi data</th>
                     <th>Paskutinis veršiavimasis</th>
                     <th>Kiek atsivesta veršiuku</th>
                     <th></th>
@@ -154,8 +158,8 @@
                     <td>{{$cat['Veisl']}}</td>
                     <td>{{$cat['PM']}}</td>
                     <td>{{$cat['Versing']}}</td>
-                    <td>{{$cat['VersData']}}</td>
                     <td>{{$cat['SeklData']}}</td>
+                    <td>{{$cat['VersData']}}</td>
                     <td>{{$cat['LastVers']}}</td>
                     <td>{{$cat['AtsivestVers']}}</td>
                     <td>
