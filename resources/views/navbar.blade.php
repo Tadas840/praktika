@@ -5,23 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
-    <nav>
-        <header class="navbar">
-            <div class="container">
-                <a id='pav' href="/">Pieno ūkis</a>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Pieno ūkis</a> 
+            </div>
+            <div id="logout"><a href="#" class="btn btn-danger square-btn-adjust">Atsijungti</a> </div>
+            
+        </nav>   
+        
+        <nav class="navbar-default navbar-side">
+            <div class="sidebar-collapse">
+                <ul class="nav">
+					
+                    <li>
+                        <a id="navg"  href="/"><i class="fa fa-table fa-2x"></i>Sąrašas</a>
+                    </li>
+                     <li>
+                        <a id="navg"  href="/species"><i class="fa fa-cow fa-2x"></i>Veislės</a>
+                    </li>
+                    <li>
+                        <a id="navg"  href="/"><i class="fa fa-line-chart fa-2x"></i>Statistika</a>
+                    </li>
+                      <li>
+                        <a id="navg" href="/"><i class="fa fa-cog fa-2x"></i>Nustatymai</a>
+                    </li>
+                 	                   
+
+                </ul>
+               
             </div>
             
-                <div class="navg"> 
-                    <a class="button" href="/">Sąrašas</a>
-                    <a class="button" href="/species">Veislės</a>
-                    <a><i class="fa fa-user-circle-o button" href="."></i></a>
-                </div>
-        
-        </header>
-    </nav>
-    
+        </nav> 
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+
+                </div>  
+                <hr />
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-6">           
+                 </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6">           
+                 </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6">           
+                 </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6">           
+                 </div>
+                </div> 
+                
 </body>
 </html>

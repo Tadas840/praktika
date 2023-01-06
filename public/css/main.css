@@ -1,13 +1,14 @@
 nav{
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.55);
-    background: white;
+    
+    
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: auto;
-    min-height: 80px;
+    
+    
 }
+
 body{
     width: auto;
     height: auto;
@@ -23,11 +24,14 @@ body{
     
     width: auto;
     height: auto;
-    margin: 250px 100px 0px 100px;
+    
+}
+#veisles{
+    width: auto;
 }
 #meniu{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
-    background-color: #0b5e4d;
+    background-color: #4D4D4D;
     height: auto;
     width: auto;
     display: table-cell;
@@ -38,14 +42,13 @@ body{
     width: auto;
     font-weight: bold;
     border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 11px;
     font-family: sans-serif;
     min-width: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
-    background-color: #009879;
+    background-color: #4D4D4D;
     color: #ffffff;
     text-align: left;
 }
@@ -65,14 +68,14 @@ body{
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 1px solid #4D4D4D;
 }
 
 .styled-table{
     width: auto;
 }
 table, tr, td{
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #4D4D4D;
 }
 #pav{
     text-decoration: none;
@@ -86,6 +89,10 @@ a{
     text-decoration: none;
     color: #222222; 
     font-family: 'Signika', sans-serif; 
+}
+#navg{
+    display: block;
+    width: 100%;
 }
 a:hover,
 a:focus {
@@ -104,11 +111,7 @@ a:focus {
     color: #003f00;
     font-weight: bold;
 }
-.navg{
-    margin: auto;
-    text-decoration: none;
-    
-}
+
 body{
     color: #000000 !important;
     font-weight: bold !important;
@@ -117,12 +120,12 @@ body{
     
     width: auto;
     height: auto;
-    background: #0b5e4d;
+    background: #4D4D4D;
     padding: 10px;
     text-decoration: none;
     text-align: center;
     border-radius: 5px;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
     line-height: 25px;
 }

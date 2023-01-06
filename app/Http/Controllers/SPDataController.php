@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\Models\Cattle;
+use App\Models\Veisle;
 
-class DisplayDataController extends Controller
+class SPDataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class DisplayDataController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
+    {
+        //
     }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +25,7 @@ class DisplayDataController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -48,21 +48,20 @@ class DisplayDataController extends Controller
     public function show(Request $request)
     {
         if ($request->ajax()) {
-            $data = Cattle::select('*');
+            $data = Veisle::select('*');
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                    
-                        $updateButton = "<a href='/edit/$row->id' class='btn btn-sm btn-info'><i class='fa fa-edit'></i></a>";
-                        $deleteButton = "<a class='btn btn-sm btn-danger delete' data-id='".$row->id."'><i class='fa fa-times'></i></a>";
+       
+                        $updateButton = "<a href='/editspec/$row->id' class='btn btn-sm btn-info'><i class='fa fa-edit'></i></a>";
+                        $deleteButton = "<a class='btn btn-sm btn-danger deleteveisl data-id='".$row->id."'><i class='fa fa-times'></i></a>";
          
                          return $updateButton." ".$deleteButton;
                     })
                     ->rawColumns(['action'])
                     ->make(true);
         }
-        return view('datatable');
-
+        return view('specdatatable');
     }
 
     /**
@@ -85,8 +84,7 @@ class DisplayDataController extends Controller
      */
     public function update(Request $request, $id)
     {
-     
-
+        //
     }
 
     /**
@@ -97,10 +95,9 @@ class DisplayDataController extends Controller
      */
     public function destroy(Request $request)
     {
-         $catdata = Cattle::find($request->id);
-       
-        $catdata->delete();
-      return redirect('/'); 
-     
+        $data = Veisle::find($request->id);
+        $data->delete();
+      
+       return redirect('/'); 
     }
 }

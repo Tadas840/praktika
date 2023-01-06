@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CattleController;
 use App\Http\Controllers\VeisleController;
 use App\Http\Controllers\DisplayDataController;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\SPDataController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,10 +27,13 @@ Route::put('edit/{id}',[CattleController::Class,'edit']);
 Route::resource('species', VeisleController::class);
 Route::get('editspec/{id}',[VeisleController::Class,'show']);
 Route::put('editspec/{id}',[VeisleController::Class,'edit']); 
-Route::get('deleteveisl/{id}', [VeisleController::Class,'destroy']);
+
+
 
 // Datatable
 Route::get('datatable',[DisplayDataController::Class, 'show'])-> name('data.show');
 Route::post('datatable', [DisplayDataController::class, 'destroy'])->name('delete.cattle');
 
 
+ Route::get('specdatatable',[SPDataController::Class, 'show'])-> name('veisl.show');
+ Route::post('specdatatable', [SPDataController::class, 'destroy'])->name('delete.veisl');

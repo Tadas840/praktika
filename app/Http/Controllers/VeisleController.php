@@ -38,7 +38,7 @@ class VeisleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'veislname' => 'required',
+            'veislname' => 'required|unique:veisle',
 
         ]);
         $veisl = new Veisle;
@@ -98,8 +98,6 @@ class VeisleController extends Controller
      */
     public function destroy($id)
     {
-        $data=Veisle::find($id);
-        $data->delete();
-        return redirect('/species');
+
     }
 }
