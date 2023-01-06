@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('js/main.js') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
@@ -134,47 +133,6 @@
         <div class="row">
             <div class="col-md-12">
                 @include('datatable')
-        {{-- <table id="Table" class="styled-table" class="display">
-            <thead>
-                <tr>
-                    <th>Galvijo ID</th>
-                    <th>Motinos ID</th>
-                    <th>Tipas</th>
-                    <th>Gimimo Data</th>
-                    <th>Amžius</th>
-                    <th>Veislė</th>
-                    <th>Pieninis/Mėsinis</th>
-                    <th>Ar veršinga?</th>
-                    <th>Sėklinimo data</th>
-                    <th>Veršiavimosi data</th>
-                    <th>Paskutinis veršiavimasis</th>
-                    <th>Kiek atsivesta veršiuku</th>
-                    <th></th>
-                </tr>
-            </thead> --}}
-            
-        {{-- @foreach ($cattle as $cat)
-            <tbody>
-                <tr>
-                    <td>{{$cat['GalvijoNr']}}</td>
-                    <td>{{$cat['MotinosNr']}}</td>
-                    <td>{{$cat['Tipas']}}</td>
-                    <td>{{$cat['GimimoData']}}</td>
-                    <td>{{$cat['Amzius']}}</td>
-                    <td>{{$cat['Veisl']}}</td>
-                    <td>{{$cat['PM']}}</td>
-                    <td>{{$cat['Versing']}}</td>
-                    <td>{{$cat['SeklData']}}</td>
-                    <td>{{$cat['VersData']}}</td>
-                    <td>{{$cat['LastVers']}}</td>
-                    <td>{{$cat['AtsivestVers']}}</td>
-                    <td>
-                        <a class="fa fa-edit" style="font-size:20px;" href="{{url("edit/".$cat->id)}}"></a>
-                        <a class="fa fa-times" style="font-size:24px;color:red" onclick="return confirm('Ar tikrai norite ištrinti įrašą?')" href="{{url("delete/".$cat->id)}}"></a>
-                    </td>
-                </tr>
-            </tbody>
-        @endforeach --}}
         </table>
        
             </div>
