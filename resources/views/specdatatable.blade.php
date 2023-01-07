@@ -13,7 +13,7 @@
     <script src="{{ asset('/js/veislescript.js') }}"></script>
     
 <div class="container">
-    <table class="table table-bordered data-table styled-table">
+    <table class="table table-bordered data-tablet styled-table">
         <thead>
             <tr>
                 <th>Veislės Pavadinimas</th>

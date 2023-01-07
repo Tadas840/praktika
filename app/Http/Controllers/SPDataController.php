@@ -54,7 +54,7 @@ class SPDataController extends Controller
                     ->addColumn('action', function($row){
        
                         $updateButton = "<a href='/editspec/$row->id' class='btn btn-sm btn-info'><i class='fa fa-edit'></i></a>";
-                        $deleteButton = "<a class='btn btn-sm btn-danger deleteveisl data-id='".$row->id."'><i class='fa fa-times'></i></a>";
+                        $deleteButton = "<a class='btn btn-sm btn-danger deleteveisl' data-id='".$row->id."'><i class='fa fa-times'></i></a>";
          
                          return $updateButton." ".$deleteButton;
                     })

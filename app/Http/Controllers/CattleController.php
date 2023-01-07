@@ -57,6 +57,7 @@ class CattleController extends Controller
             'GalvijoNr' => 'required|unique:cattle|integer', //pridėti |digits:12.
             'MotinosNr' => 'required|integer', //pridėti |digits:12.
             'GimimoData' => 'required',
+            'Veisl' => 'required',
 
         ]);
        
@@ -64,7 +65,7 @@ class CattleController extends Controller
 
             $versing = $request->input('versing');
             $SeklData = $request->input('SeklData');
-            $VersData = $request->input('VersData');
+            $vdate = $request->input('VersData');
             $LastVers= $request->input('LastVers');
             $AtsivestVers= $request->input('AtsivestVers');
             $vdate = Carbon::parse($SeklData)->addMonth(9);
@@ -72,7 +73,7 @@ class CattleController extends Controller
            if(($request->input('Tipas') === Cattle::CATTLE_TYPE_1) || ($request->input('Tipas') === Cattle::CATTLE_TYPE_2)){
                $versing = 'Ne';
                $SeklData = null;
-               $VersData = null;
+               $vdate = null;
                $LastVers = null;
                $vdate = null;
            }

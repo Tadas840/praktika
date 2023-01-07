@@ -3,7 +3,7 @@ $(function () {
  
     
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    var table = $('.data-table').DataTable({
+    var table = $('.data-tablet').DataTable({
         processing: true,
         serverSide: true,
         ajax: pathshowspd,
@@ -12,9 +12,9 @@ $(function () {
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
-    $('.data-table').on('click','.deleteveisl',function(){
+    $('.data-tablet').on('click','.deleteveisl',function(){
             var id = $(this).data('id');
-            
+            console.log(id);
             var deleteConfirm = confirm("Ar tikrai norite ištrinti šį įrašą?");
             if (deleteConfirm == true) {
                  $.ajax({
