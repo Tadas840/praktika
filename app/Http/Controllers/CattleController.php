@@ -49,10 +49,8 @@ class CattleController extends Controller
     {
         $date1 = Carbon::parse($request->input('GimimoData'));
         $date2 = Carbon::today();
-        $date = $date1->diffInDays($date2);
-        $year = 365;
-        $date = $date / $year;
-        
+        $monthdate = $date1->diffInMonths($date2);
+       
         $this->validate($request,[
             'GalvijoNr' => 'required|unique:cattle|integer', //pridėti |digits:12.
             'MotinosNr' => 'required|integer', //pridėti |digits:12.
@@ -81,6 +79,14 @@ class CattleController extends Controller
                $LastVers = null;
                $vdate = null;
             }
+            if($request->input('versing') === Cattle::CATTLE_V_N){
+                $SeklData = null;
+                $vdate = null;
+                $LastVers = null;
+            }
+            if($request->input('SeklData') == null){
+                $vdate = null;
+            }
 
         
         $catl = new Cattle;
@@ -88,7 +94,7 @@ class CattleController extends Controller
         $catl->MotinosNr = $request->input('MotinosNr');
         $catl->Tipas = $request->input('Tipas');
         $catl->GimimoData = $request->input('GimimoData');
-        $catl->Amzius = $date;
+        $catl->Amzius = $monthdate;
         $catl->Veisl = $request->input('Veisl');
         $catl->PM = $request->input('PM');
         $catl->versing = $versing;
