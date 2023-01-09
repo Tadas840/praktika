@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('cattle', function (Blueprint $table) {
             $table->id();
-            $table->integer('GalvijoNr');
-            $table->integer('MotinosNr');
+            $table->string('GalvijoNr');
+            $table->integer('MotinosNr')->nullable();
             $table->string('Tipas');
-            $table->date('GimimoData');
-            $table->decimal('Amzius',7,0);
-            $table->string('Veisl');
-            $table->string('PM');
+            $table->date('GimimoData')->nullable();
+            $table->decimal('Amzius',7,1)->nullable();;
+            $table->string('Veisl')->nullable();;
+            $table->string('PM')->nullable();;
             $table->string('Versing')->nullable();
             $table->date('VersData')->nullable();
             $table->date('SeklData')->nullable();

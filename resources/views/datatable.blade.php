@@ -19,6 +19,7 @@
     <table class="table table-bordered data-table styled-table">
         <thead>
             <tr>
+                <th></th>
                 <th>Galvijo ID</th>
                 <th>Motinos ID</th>
                 <th>Tipas</th>
@@ -31,7 +32,6 @@
                 <th>Veršiavimosi data</th>
                 <th>Paskutinis veršiavimasis</th>
                 <th>Kiek atsivesta veršiuku</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>

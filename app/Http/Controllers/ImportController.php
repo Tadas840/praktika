@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Cattle;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\CattleImport;
 
 use Illuminate\Http\Request;
-use Yajra\DataTables\DataTables;
-use App\Models\Veisle;
 
-class SPDataController extends Controller
+class ImportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class SPDataController extends Controller
      */
     public function index()
     {
-        //
+        return view('importdata');
     }
 
     /**
@@ -23,6 +24,13 @@ class SPDataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function import() 
+    {
+        Excel::import(new CattleImport, request()->file('file'));
+        
+        return redirect('/');
+    }
+
     public function create()
     {
         //
@@ -45,23 +53,9 @@ class SPDataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($id)
     {
-        if ($request->ajax()) {
-            $data = Veisle::select('*')->groupBy('veislname');
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
-       
-                        $updateButton = "<a href='/editspec/$row->id' class='btn btn-sm btn-info'><i class='fa fa-edit'></i></a>";
-                        $deleteButton = "<a class='btn btn-sm btn-danger deleteveisl' data-id='".$row->id."'><i class='fa fa-times'></i></a>";
-         
-                         return $updateButton." ".$deleteButton;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
-        return view('specdatatable');
+        //
     }
 
     /**
@@ -93,11 +87,8 @@ class SPDataController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $data = Veisle::find($request->id);
-        $data->delete();
-      
-       return redirect('/'); 
+        //
     }
 }

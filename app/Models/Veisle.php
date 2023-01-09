@@ -9,5 +9,9 @@ class Veisle extends Model
 {
     use HasFactory;
     protected $table = "veisle";
+    protected $fillable = [
+        
+        'veislname',
+];
  
 }

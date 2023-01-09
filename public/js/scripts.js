@@ -7,6 +7,7 @@ $(function () {
       serverSide: true,
       ajax: pathshow,
       columns: [
+          {data: 'action', name: 'action', orderable: false, searchable: false},
           {data: 'GalvijoNr', name: 'GalvijoNr'},
           {data: 'MotinosNr', name: 'MotinosNr'},
           {data: 'Tipas', name: 'Tipas'},
@@ -19,7 +20,7 @@ $(function () {
           {data: 'VersData', name: 'VersData'},
           {data: 'LastVers', name: 'LastVers'},
           {data: 'AtsivestVers', name: 'AtsivestVers'},
-          {data: 'action', name: 'action', orderable: false, searchable: false},
+          
       ]
   });
   $('.data-table').on('click','.delete',function(){

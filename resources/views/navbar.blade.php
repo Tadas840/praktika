@@ -33,6 +33,9 @@
                     <li>
                         <a id="navg"  href="/"><i class="fa fa-line-chart fa-2x"></i>Statistika</a>
                     </li>
+                    <li>
+                        <a id="navg"  href="/importdata"><i class="fa fa-plus fa-2x"></i>Duomenų Pridėjimas</a>
+                    </li>
                       <li>
                         <a id="navg" href="/"><i class="fa fa-cog fa-2x"></i>Nustatymai</a>
                     </li>

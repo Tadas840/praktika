@@ -43,9 +43,8 @@
                               <label>Tipas</label>
                               <select name="Tipas">
                                 <option value="Karve">Karve</option>
-                                <option value="Jautis">Jautis</option>
+                                <option value="Jautis">Buliukas</option>
                                 <option value="Telycaite">Telycaite</option>
-                                <option value="Versiukas">Jautukas</option>
                              </select>
                             </div>
         
@@ -78,21 +77,10 @@
                                     <option value="Taip">Taip</option>
                                 </select>
                             </div>
-        
-                            <div class="form-group">
-                                <label>Veršiavimosi Data</label>
-                                <input type="date" name="VersData" class="form-control">
-                            </div>
                             <div class="form-group">
                                 <label>Sėklinimo Data</label>
                                 <input type="date" name="SeklData" class="form-control">
                             </div>
-        
-                            <div class="form-group">
-                                <label>Paskutinis Veršiavimasis</label>
-                                <input type="date" name="LastVers" class="form-control">
-                            </div>
-        
                             <div class="form-group">
                                 <label>Atsivesta veršiuku</label>
                                 <input type="number" name="AtsivestVers" class="form-control">

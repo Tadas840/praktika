@@ -17,7 +17,7 @@ class CattleController extends Controller
     {
     
         $data=Cattle::all();  
-        $data2=Veisle::all();
+        $data2=Veisle::all()->unique('veislname')->toArray();
 
         $params =
         [
@@ -53,7 +53,6 @@ class CattleController extends Controller
        
         $this->validate($request,[
             'GalvijoNr' => 'required|unique:cattle|integer', //pridėti |digits:12.
-            'MotinosNr' => 'required|integer', //pridėti |digits:12.
             'GimimoData' => 'required',
             'Veisl' => 'required',
 

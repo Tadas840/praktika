@@ -5,6 +5,7 @@ use App\Http\Controllers\CattleController;
 use App\Http\Controllers\VeisleController;
 use App\Http\Controllers\DisplayDataController;
 use App\Http\Controllers\SPDataController;
+use App\Http\Controllers\ImportController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,6 @@ Route::post('datatable', [DisplayDataController::class, 'destroy'])->name('delet
 
  Route::get('specdatatable',[SPDataController::Class, 'show'])-> name('veisl.show');
  Route::post('specdatatable', [SPDataController::class, 'destroy'])->name('delete.veisl');
+
+ Route::get('importdata', [ImportController::Class, 'index']);
+ Route::post('cattle-import', [ImportController::Class, 'import'])->name('cattle.import');
