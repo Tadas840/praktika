@@ -2,6 +2,9 @@
 
 namespace App\Console;
 
+use App\Models\Cattle;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,7 +18,14 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $today=Carbon::today()->toDateString();
+            DB::table('cattle')
+                ->where('Tipas', '=',Cattle::CATTLE_TYPE_3)
+                ->where('VersData','=',$today)
+                ->update(['Tipas' => Cattle::CATTLE_TYPE_1]);
+        })->everyMinute();
+    
     }
 
     /**

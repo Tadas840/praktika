@@ -6,6 +6,7 @@ use App\Http\Controllers\VeisleController;
 use App\Http\Controllers\DisplayDataController;
 use App\Http\Controllers\SPDataController;
 use App\Http\Controllers\ImportController;
+use App\Http\Controllers\ScanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,5 @@ Route::post('datatable', [DisplayDataController::class, 'destroy'])->name('delet
 
  Route::get('importdata', [ImportController::Class, 'index']);
  Route::post('cattle-import', [ImportController::Class, 'import'])->name('cattle.import');
+
+ Route::get('/scan', [ScanController::Class, 'index']);

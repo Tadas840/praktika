@@ -33,24 +33,23 @@
                     <th>Veislė</th>
                     <th>Pieninis/Mėsinis</th>
                     <th>Ar veršinga?</th>
-                    <th>Numatoma veršiavimosi data</th>
-                    <th>Numatoma sėklinimo data</th>
-                    <th>Paskutinis veršiavimasis</th>
-                    <th>Kiek atsivesta veršiuku</th>
+                    <th>Sėklinimo data</th>
+                    <th>Veršiavimosi data</th>
                     <th></th>
+                
+                   
                 </tr>
             </thead>
 
             <tbody>
                 <tr>
-                <td><input type="number" style="width: 80px" name="GalvijoNr" value="{{$cattles['GalvijoNr']}}"></td>
-                    <td><input type="number" style="width: 80px" name="MotinosNr" value="{{$cattles['MotinosNr']}}"></td>
+                <td><input type="text" style="width: 80px" name="GalvijoNr" value="{{$cattles['GalvijoNr']}}"></td>
+                    <td><input type="text" style="width: 80px" name="MotinosNr" value="{{$cattles['MotinosNr']}}"></td>
                     <td>
                         <select name="Tipas" value="{{$cattles['Tipas']}}">
                           <option value="Karve">Karve</option>
-                          <option value="Jautis">Jautis</option>
+                          <option value="Jautis">Buliukas</option>
                           <option value="Telycaite">Telycaite</option>
-                          <option value="Versiukas">Jautukas</option>
                         </select>
                     </td>
                     <td><input type="date" name="GimimoData" value="{{$cattles['GimimoData']}}"></td>
@@ -65,20 +64,18 @@
                     </td>
                     <td>
                         <select name="PM" value="{{$cattles['PM']}}">
-                            <option value="Mesinis">Mesinis</option>
                             <option value="Pieninis">Pieninis</option>
+                            <option value="Mesinis">Mesinis</option>
                         </select>
                     </td>
                     <td>
                         <select name="versing" value="{{$cattles['Versing']}}">
-                            <option value="Taip">Taip</option>
                             <option value="Ne">Ne</option>
+                            <option value="Taip">Taip</option>
                         </select>
                     </td>
-                    <td><input type="date" name="VersData" value="{{$cattles['VersData']}}"></td>
                     <td><input type="date" name="SeklData" value="{{$cattles['SeklData']}}"></td>
-                    <td><input type="date" name="LastVers" value="{{$cattles['LastVers']}}"></td>
-                    <td><input style="width:30px" type="number" name="AtsivestVers" value="{{$cattles['AtsivestVers']}}"></td>
+                    <td><input type="date" name="VersData" value="{{$cattles['VersData']}}"></td>
                     <td> <button type="submit"><i style="font-size:16px; color:green;" class="fa fa-check"></i></button></td>
                 </tr>
             </tbody>

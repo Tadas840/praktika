@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cattle extends Model
 {
-    const CATTLE_TYPE_1 = 'Jautis';
+    const CATTLE_TYPE_1 = 'Karve';
     const CATTLE_TYPE_2 = 'Buliukas';
     const CATTLE_TYPE_3 = 'Telycaite';
     const CATTLE_V_Y = 'Taip';

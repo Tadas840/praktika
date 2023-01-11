@@ -31,12 +31,12 @@
         
                             <div class="form-group">
                               <label>Galvijo Nr </label>
-                              <input type="number" name="GalvijoNr" class="form-control">
+                              <input type="text" name="GalvijoNr" class="form-control">
                             </div>
         
                             <div class="form-group">
                               <label>Motinos Nr </label>
-                              <input type="number" name="MotinosNr" class="form-control">
+                              <input type="text" name="MotinosNr" class="form-control">
                             </div>
         
                             <div class="form-group">
