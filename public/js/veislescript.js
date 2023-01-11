@@ -14,7 +14,6 @@ $(function () {
     });
     $('.data-tablet').on('click','.deleteveisl',function(){
             var id = $(this).data('id');
-            console.log(id);
             var deleteConfirm = confirm("Ar tikrai norite ištrinti šį įrašą?");
             if (deleteConfirm == true) {
                  $.ajax({
