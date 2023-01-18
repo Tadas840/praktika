@@ -52,7 +52,7 @@ class CattleController extends Controller
         $monthdate = $date1->diffInMonths($date2);
        
         $this->validate($request,[
-            'GalvijoNr' => 'required|unique:cattle', //pridėti |digits.
+            'GalvijoNr' => 'required|unique:cattle',
             'GimimoData' => 'required',
             'Veisl' => 'required',
 

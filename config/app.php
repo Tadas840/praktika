@@ -183,6 +183,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         yajra\Datatables\DatatablesServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class,
 
         /*
          * Package Service Providers...

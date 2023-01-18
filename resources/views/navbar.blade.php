@@ -16,7 +16,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">Pieno ūkis</a> 
             </div>
-            <div id="logout"><a href="#" class="btn btn-danger square-btn-adjust">Atsijungti</a> </div>
+            <div class="card-body" style="color:white">
+           
+              </div>
+            <div id="logout"><a href="{{url('logout')}}" class="btn btn-danger square-btn-adjust">Atsijungti</a> </div>
             
         </nav>   
         
@@ -31,7 +34,7 @@
                         <a id="navg"  href="/species"><i class="fa fa-cow fa-2x"></i>Veislės</a>
                     </li>
                     <li>
-                        <a id="navg"  href="/"><i class="fa fa-line-chart fa-2x"></i>Statistika</a>
+                        <a id="navg"  href="/chart"><i class="fa fa-line-chart fa-2x"></i>Statistika</a>
                     </li>
                     <li>
                         <a id="navg"  href="/importdata"><i class="fa fa-plus fa-2x"></i>Duomenų Pridėjimas</a>

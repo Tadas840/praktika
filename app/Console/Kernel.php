@@ -18,13 +18,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-            $today=Carbon::today()->toDateString();
-            DB::table('cattle')
-                ->where('Tipas', '=',Cattle::CATTLE_TYPE_3)
-                ->where('VersData','=',$today)
-                ->update(['Tipas' => Cattle::CATTLE_TYPE_1]);
-        })->everyMinute();
+        $schedule->command('type:change')
+        ->everyMinute();
     
     }
 

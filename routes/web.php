@@ -7,6 +7,8 @@ use App\Http\Controllers\DisplayDataController;
 use App\Http\Controllers\SPDataController;
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ScanController;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,3 +46,12 @@ Route::post('datatable', [DisplayDataController::class, 'destroy'])->name('delet
  Route::post('cattle-import', [ImportController::Class, 'import'])->name('cattle.import');
 
  Route::get('/scan', [ScanController::Class, 'index']);
+
+ Route::get('chart', [ChartController::class, 'index']);
+
+ Route::get('login', [AuthController::Class, 'index']);
+ Route::post('post-login', [AuthController::Class, 'postlogin']);
+ Route::get('registration', [AuthController::Class, 'registration']);
+ Route::post('post-registration', [AuthController::Class, 'postregistration']);
+ Route::get('navbar', [AuthController::Class, 'dashboard']);
+ Route::get('logout', [AuthController::Class, 'logout']);
