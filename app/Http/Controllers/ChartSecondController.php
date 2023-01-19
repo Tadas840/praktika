@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cattle;
 use Illuminate\Http\Request;
-Use DB;
+use App\Models\Veisle;
+use DB; 
 
-
-class ChartController extends Controller
+class ChartSecondController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,17 +15,18 @@ class ChartController extends Controller
      */
     public function index()
     {
-        $cattles = Cattle::select(DB::raw("COUNT(*) as count"), DB::raw("Year(GimimoData) as birth_year"))
-                    ->groupBy(DB::raw("Year(GimimoData)"))
-                    ->get();
- 
-        $labels = $cattles->pluck('birth_year');
-        $data = $cattles->pluck('count');
-              
-        return view('chart', compact('labels', 'data'));
-
-
-    } 
+       
+            $veisle = Veisle::select(DB::raw("COUNT(*) as count"),DB::raw("veislname as pav"))
+                        ->groupBy(DB::raw("veislname"))
+                        ->get();
+     
+            $labelsecond = $veisle->pluck('pav');
+            $datasecond = $veisle->pluck('count');
+                  
+            return view('chartsecond', compact('labelsecond', 'datasecond'));
+    
+        
+    }
 
     /**
      * Show the form for creating a new resource.

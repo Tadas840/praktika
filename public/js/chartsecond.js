@@ -1,15 +1,13 @@
-
-            
-var cattles = cattle;
-var labels =  labeld;
+var veisles = veisl;
+var labels =  labelx;
 
 const data = {
     labels: labels,
     datasets: [{
-    label: 'Galvijų gimstamumas',
+    label: 'Viesliu kiekis',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    data: cattles,
+    data: veisles,
     }]
 };
 
@@ -20,6 +18,6 @@ const data = {
 };
 
  const myChart = new Chart(
-    document.getElementById('myChart'),
+    document.getElementById('SecondChart'),
     config
 );

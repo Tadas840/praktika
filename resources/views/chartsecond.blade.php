@@ -16,18 +16,15 @@
 <body>
     <script src="path/to/chartjs/dist/Chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="{{ asset('/js/chart.js') }}" defer></script>
+    <script src="{{ asset('/js/chartsecond.js') }}" defer></script>
     @include('navbar')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div>
-    <canvas id="myChart" height="100px"></canvas>
-</div>
+
+    <canvas id="SecondChart" height="100px"></canvas>
 <script>
-    var labeld =  {{ Js::from($labels) }};
-    var cattle =  {{ Js::from($data) }};
-    </script>
-<div>
-    
+  var labelx = {{Js::from($labelsecond)}};
+  var veisl = {{Js::from($datasecond)}};
+</script>
 </body>      
 </html>
