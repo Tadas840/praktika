@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Cattle extends Model
 {
     const CATTLE_TYPE_1 = 'Karve';
@@ -28,5 +29,10 @@ class Cattle extends Model
         'LastVers',
         'AtsivestVers',
     ];
+
+public function veisl()
+{
+    return $this->hasMany(Veisle::class, 'id');
+}
 
 }

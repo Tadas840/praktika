@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Veisle;
 
+
 class VeisleController extends Controller
 {
  
@@ -14,7 +15,8 @@ class VeisleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        
         $data = Veisle::all();
         return view('species',['spec'=>$data]);
     }
@@ -37,6 +39,7 @@ class VeisleController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request,[
             'veislname' => 'required|unique:veisle',
 

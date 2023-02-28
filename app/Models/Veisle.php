@@ -5,13 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class Veisle extends Model
 {
     use HasFactory;
+    
     protected $table = "veisle";
+
     protected $fillable = [
-        
         'veislname',
 ];
- 
+public function catl()
+{
+    return $this->belongTo(Cattle::class,'id');
+} 
+
 }

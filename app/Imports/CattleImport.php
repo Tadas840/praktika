@@ -7,6 +7,7 @@ use App\Models\Cattle;
 use App\Models\Veisle;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
+use Illuminate\Validation\Rule;
 
 class CattleImport implements ToModel,  WithStartRow
 {
@@ -21,26 +22,33 @@ class CattleImport implements ToModel,  WithStartRow
     */
     public function model(array $row)
     {
+        $v = Veisle::where('veislname', '=', $row[5])->first();
 
-       
+        if(!$v) {
+            $veisle = new Veisle([
+                'veislname' => $row[5],
+            ]);
+
+            $veisle->save();
+
+            $v = $veisle;
+        }
+
         $data = new Cattle([
             $date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[6]),
             'GalvijoNr' => $row[2],
             'MotinosNr' => null,
             'Tipas' => $row[4],
-            'Veisl' => $row[5],
+            'Veisl' => $v->id,
             'GimimoData' => $date,
             'Amzius' => $row[7], 
 
         ]);
-        $data1 = new Veisle([
-            $veisl = 'veislname',
-            $veisl => $row[5],
-        ]);
-      
+        
+     
+        
         $params = [
-           $data,
-           $data1,
+           $data
         ];
 
         return $params;

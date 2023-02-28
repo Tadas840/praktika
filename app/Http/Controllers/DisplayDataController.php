@@ -47,6 +47,7 @@ class DisplayDataController extends Controller
      */
     public function show(Request $request)
     {
+        
         if ($request->ajax()) {
             $data = Cattle::select('*');
             return Datatables::of($data)
