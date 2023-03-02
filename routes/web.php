@@ -49,7 +49,6 @@ Route::post('datatable', [DisplayDataController::class, 'destroy'])->name('delet
  Route::get('/scan', [ScanController::Class, 'index']);
 
  Route::get('chart', [ChartController::class, 'index']);
- Route::get('chartsecond', [ChartSecondController::class, 'index']);
  
 
  Route::get('login', [AuthController::Class, 'index']);

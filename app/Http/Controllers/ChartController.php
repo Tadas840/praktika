@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cattle;
+use App\Models\Veisle;
 use Illuminate\Http\Request;
 Use DB;
 
@@ -22,10 +23,15 @@ class ChartController extends Controller
  
         $labels = $cattles->pluck('birth_year');
         $data = $cattles->pluck('count');
-              
-        return view('chart', compact('labels', 'data'));
 
+        $veisle = Cattle::select(DB::raw("COUNT(*) as count"),DB::raw("Veisl as pav"))
+        ->groupBy(DB::raw("Veisl"))
+        ->get();
 
+        $labelsecond = $veisle->pluck('pav');
+        $datasecond = $veisle->pluck('count');
+  
+        return view('chart', compact('labels', 'data', 'labelsecond', 'datasecond'));
     } 
 
     /**

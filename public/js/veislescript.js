@@ -7,9 +7,11 @@ $(function () {
         processing: true,
         serverSide: true,
         ajax: pathshowspd,
+        responsive: true,
+        maintainAspectRatio: false,
         columns: [
-            {data: 'veislname', name: 'veislname'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
+            {data: 'veislname', name: 'veislname'},
         ]
     });
     $('.data-tablet').on('click','.deleteveisl',function(){

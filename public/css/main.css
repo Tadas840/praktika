@@ -1,44 +1,24 @@
-nav{
-    
-    
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    
-    
-}
 
-body{
-    align-items: center;
-    align-self: stretch;
+body {
     background-color: white;
-    
+}
+ul li{
+    display: inline;
    
 }
-#list{
-    
-    width: auto;
-    height: auto;
-    
-}
-#veisles{
-    width: auto;
-}
-#meniu{
+#meniu {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
     background-color: #4D4D4D;
-    height: auto;
-    width: auto;
     display: table-cell;
     vertical-align: middle;
     font-size: 20px;
 }
-table{
-    width: 80% !important;
+
+table {
     border-collapse: collapse !important;
-    resize: both !important;
+
 }
+
 .styled-table {
     font-weight: bold;
     border-collapse: collapse;
@@ -46,15 +26,13 @@ table{
     font-family: sans-serif;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
 .styled-table thead tr {
     background-color: #4D4D4D;
     color: #ffffff;
     text-align: left;
 }
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
+
 .styled-table tbody tr {
     border: 1px solid #dddddd;
 }
@@ -62,6 +40,7 @@ table{
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
+
 .styled-table tbody tr:nth-of-type(odd) {
     background-color: #f3f3f3;
 }
@@ -69,50 +48,57 @@ table{
 .styled-table tbody tr:last-of-type {
     border-bottom: 1px solid #4D4D4D;
 }
-table, tr, td{
+
+table,
+tr,
+td {
     border-right: 1px solid #4D4D4D;
 }
-#pav{
+
+#pav {
     text-decoration: none;
     color: #000000;
     font-size: 48px; 
     font-family: 'Signika', sans-serif; 
     padding-bottom: 10px;
-    
 }
-a{
+
+a {
     text-decoration: none;
     color: #222222; 
     font-family: 'Signika', sans-serif; 
 }
-#navg{
-    display: block;
+
+#navg {
     width: 100%;
 }
+
+
 a:hover,
 a:focus {
-  color: #ffffff;
+    color: #ffffff;
 }
 
-#edit{
+#edit {
     font-weight: bold;
 }
-#error{
+
+#error {
     color: #ff0000;
     font-weight: bold;
-
 }
-#success{
+
+#success {
     color: #003f00;
     font-weight: bold;
 }
 
-body{
+body {
     color: #000000 !important;
     font-weight: bold !important;
 }
+
 .button {
-    
     width: auto;
     height: auto;
     background: #4D4D4D;
@@ -124,6 +110,7 @@ body{
     font-weight: bold;
     line-height: 25px;
 }
-.button:hover{
+
+.button:hover {
     color: white;
 }

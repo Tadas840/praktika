@@ -20,5 +20,4 @@ public function catl()
 {
     return $this->belongTo(Cattle::class,'id');
 } 
-
 }

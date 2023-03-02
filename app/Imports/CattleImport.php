@@ -39,7 +39,7 @@ class CattleImport implements ToModel,  WithStartRow
             'GalvijoNr' => $row[2],
             'MotinosNr' => null,
             'Tipas' => $row[4],
-            'Veisl' => $v->id,
+            'Veisl' => $v->veislname,
             'GimimoData' => $date,
             'Amzius' => $row[7], 
 

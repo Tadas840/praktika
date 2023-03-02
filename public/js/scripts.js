@@ -6,6 +6,8 @@ $(function () {
       processing: true,
       serverSide: true,
       ajax: pathshow,
+      responsive: true,
+      maintainAspectRatio: false,
       columns: [
           {data: 'action', name: 'action', orderable: false, searchable: false},
           {data: 'GalvijoNr', name: 'GalvijoNr'},
