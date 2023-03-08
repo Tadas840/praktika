@@ -51,7 +51,7 @@
     </div>
    </div>
           
-          <div id="list" class="container">
+          <div class="container">
             <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">

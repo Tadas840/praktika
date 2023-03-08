@@ -25,7 +25,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
-    <script src="./dist/js/demo-theme.min.js?1674944402"></script>
+  
         <!-- Navbar -->
         <header class="navbar navbar-expand-md navbar-light d-print-none">
           <div class="container-xl">
@@ -63,7 +63,7 @@
                 <div class="container-xl">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="./" >
+                      <a class="nav-link" href="/" >
                         <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -78,7 +78,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./">
+                      <a class="nav-link" href="/">
                         <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-article" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -94,7 +94,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./species" >
+                        <a class="nav-link" href="/species" >
                           <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/checkbox -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11l3 3l8 -8" /><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" /></svg>
                           </span>
@@ -104,7 +104,7 @@
                         </a>
                       </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./chart">
+                        <a class="nav-link" href="/chart">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -120,7 +120,7 @@
                         </a>
                      </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./importdata">
+                        <a class="nav-link" href="/importdata">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-import" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -134,7 +134,7 @@
                     </a>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./scan">
+                        <a class="nav-link" href="/scan">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-barcode" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -158,61 +158,5 @@
               </div>
             </div>
         </header>
-
-    {{-- <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Pieno ūkis</a> 
-            </div>
-            <div class="card-body" style="color:white">
-           
-              </div>
-            <div id="logout"><a href="{{url('logout')}}" class="btn btn-danger square-btn-adjust">Atsijungti</a> </div>
-            
-        </nav>   
-    
-            <div class="sidebar-collapse">
-                <ul class="nav">
-					
-                    <li>
-                        <a id="navg"  href="/"><i class="fa fa-table fa-2x"></i>Sąrašas</a>
-                    </li>
-                     <li>
-                        <a id="navg"  href="/species"><i class="fa fa-cow fa-2x"></i>Veislės</a>
-                    </li>
-                    <li>
-                        <a id="navg"  href="/chart"><i class="fa fa-line-chart fa-2x"></i>Statistika</a>
-                    </li>
-                    <li>
-                        <a id="navg"  href="/importdata"><i class="fa fa-plus fa-2x"></i>Duomenų Pridėjimas</a>
-                    </li>
-                      <li>
-                        <a id="navg" href="/scan"><i class="fa fa-barcode fa-2x"></i>Skenuoti</a>
-                    </li>
-                 	                   
-
-                </ul>
-               
-            </div>
-            
-        <div id="page-wrapper" >
-            <div id="page-inner">
-                <div class="row">
-
-                </div>  
-                <hr />
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-6">           
-                 </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6">           
-                 </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6">           
-                 </div>
-                        <div class="col-md-3 col-sm-6 col-xs-6">           
-                 </div>
-             </div> 
-     
-         --}}
-    
 </body>
 </html>
