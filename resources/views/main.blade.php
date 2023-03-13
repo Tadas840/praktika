@@ -1,33 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{-- <link rel="stylesheet" href="{{ asset('css/main.css') }}"> --}}
-    <link href="./dist/css/tabler.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/tabler-flags.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/tabler-payments.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/tabler-vendors.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/demo.min.css?1674944402" rel="stylesheet"/>
-    <style>
-      @import url('https://rsms.me/inter/inter.css');
-      :root {
-          --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-      }
-      body {
-          font-feature-settings: "cv03", "cv04", "cv11";
-      }
-    </style>
-
-    <title>Galvijų apskaitos kompiuterizuota sistema</title>
-</head>
-<body>
-    @csrf
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-   @include('navbar')
- 
+@extends('partials.app')
+ @section('content')
 
 
    <div class="page">
@@ -39,8 +11,7 @@
                 <div class="col">
                   <h2 class="page-title">
                     
-                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Pridėti Galviją</a><br>
-                   
+                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Pridėti Galviją</a><br> 
                   </h2><br>
                   @include('datatable')
                 </div>
@@ -50,7 +21,7 @@
     </div>
     </div>
    </div>
-          
+   
           <div class="container">
             <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -128,7 +99,6 @@
                     
                   </div>
                 </div>
-
         </div>
         <div class="container">
             @if(count($errors)>0)
@@ -149,9 +119,6 @@
         
         <br>
         </table>   
-       
-
     </div>
     </div> 
-</body>
-</html>
+@endsection

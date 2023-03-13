@@ -1,10 +1,7 @@
 @extends('partials.app')
 
 @section('content')
-    
-    @include('navbar')
-
-   
+      
     <div class="page">
     <div class="container-xl">
     <div class="page-wrapper">

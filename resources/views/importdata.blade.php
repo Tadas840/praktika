@@ -1,7 +1,5 @@
 @extends('partials.app')
 
-     @include('navbar')
-
     @section('content')
     
 <div class="page">

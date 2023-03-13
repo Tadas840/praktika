@@ -1,6 +1,3 @@
-@extends('partials.app')
-
-@section('content')
 <div class="container">
     <table class="table table-bordered data-tablet styled-table">
         <thead>
@@ -9,11 +6,8 @@
                 <th>Veislės Pavadinimas</th>
             </tr>
         </thead>
-
         <tbody>
-            
         </tbody>
-
     </table>
 </div>
-    @endsection
+    

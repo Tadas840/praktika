@@ -1,8 +1,3 @@
-
-@extends('partials.app')
-
-@section('content')
-
 <div class="container">
     <div class="page">
         <div class="container-xl">
@@ -36,6 +31,6 @@
 </div>
 </div>
 </div>
-    </div>
 </div>
-@endsection
+</div>
+

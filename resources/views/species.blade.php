@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="./dist/css/tabler.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/tabler-flags.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/tabler-payments.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/tabler-vendors.min.css?1674944402" rel="stylesheet"/>
-    <link href="./dist/css/demo.min.css?1674944402" rel="stylesheet"/>
-    <style>
-      @import url('https://rsms.me/inter/inter.css');
-      :root {
-      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-      }
-      body {
-      	font-feature-settings: "cv03", "cv04", "cv11";
-      }
-    </style>
-    <title></title>
-</head>
-<body>
-    @csrf
-    @include('navbar')
+@extends('partials.app')
+
+@section('content')
+
     <div class="page">
       <div class="container-xl">
       <div class="page-wrapper">
@@ -88,5 +67,4 @@
       @endif
           </div>
 
-</body>
-</html>
+@endsection
