@@ -11,7 +11,8 @@
                 <div class="col">
                   <h2 class="page-title">
                     
-                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Pridėti Galviją</a><br> 
+                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-team">Pridėti Galviją</a><br> 
+                    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit-modal">Update</a><br> 
                   </h2><br>
                   @include('datatable')
                 </div>
@@ -23,10 +24,10 @@
    </div>
    
           <div class="container">
-            <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
+            <div class="modal modal-blur fade" id="modal-team" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
                       <h1 class="modal-title fs-5" id="ModalLabel">Galvijų Pridėjimas</h1>
                     </div>
                 <form action="main" method="POST">
@@ -45,7 +46,7 @@
         
                             <div class="form-group">
                               <label>Tipas</label>
-                              <select name="Tipas">
+                              <select name="Tipas" style="width:100%">
                                 <option value="Karve">Karve</option>
                                 <option value="Jautis">Buliukas</option>
                                 <option value="Telycaite">Telycaite</option>
@@ -59,7 +60,7 @@
         
                             <div class="form-group">
                                 <label>Veislė</label>
-                                <select name="Veisl">
+                                <select name="Veisl" style="width:100%">
                                      @foreach($specdata as $spd)
                                     <option value="{{$spd['veislname']}}">{{$spd['veislname']}}</option>
                                      @endforeach
@@ -68,7 +69,7 @@
         
                             <div class="form-group">
                                 <label>Pieninis/Mesinis</label>
-                                <select name="PM">
+                                <select name="PM" style="width:100%">
                                     <option value="Pieninis">Pieninis</option>
                                     <option value="Mesinis">Mesinis</option>
                                 </select>
@@ -76,7 +77,7 @@
         
                             <div class="form-group">
                                 <label>Ar veršinga?</label>
-                                <select name="versing">
+                                <select name="versing" style="width:100%">
                                     <option value="Ne">Ne</option>
                                     <option value="Taip">Taip</option>
                                 </select>
@@ -101,6 +102,21 @@
                 </div>
         </div>
         <div class="container">
+          <div class="modal modal-blur fade" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ModalLabel">Galvijų Pridėjimas</h1>
+                  </div>
+              <form action="main" method="POST">
+
+                
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
             @if(count($errors)>0)
             <div class="alert alert-danger">
             <ul>
@@ -118,7 +134,7 @@
                 </div>
         
         <br>
-        </table>   
+        
     </div>
     </div> 
 @endsection

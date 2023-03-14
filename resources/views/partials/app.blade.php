@@ -13,6 +13,7 @@
     <link href="{{asset('./dist/css/tabler-payments.min.css?1674944402') }}" rel="stylesheet"/>
     <link href="{{asset('./dist/css/tabler-vendors.min.css?1674944402') }}" rel="stylesheet"/>
     <link href="{{asset('./dist/css/demo.min.css?1674944402') }}" rel="stylesheet"/>
+    <link href="{{asset('./css/custom.css') }}" rel="stylesheet"/>
     <style>
         @import url('https://rsms.me/inter/inter.css');
         :root {
@@ -24,7 +25,7 @@
       </style>
 </head>
     <body>
-           <!-- Navbar -->
+          
            <header class="navbar navbar-expand-md navbar-light d-print-none">
             <div class="container-xl">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +41,7 @@
                 <div class="nav-item d-none d-md-flex me-3">
                   <div class="btn-list">
                     <a href="{{url('logout')}}" class="btn" target="_blank" rel="noreferrer">
-                      <!-- Download SVG icon from http://tabler-icons.io/i/brand-github -->
+                    
                       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-bar-to-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                           <path d="M14 12l-10 0"></path>
@@ -62,7 +63,7 @@
                     <ul class="navbar-nav">
                       <li class="nav-item">
                         <a class="nav-link" href="/" >
-                          <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                          <span class="nav-link-icon d-md-none d-lg-inline-block">
                               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                   <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
@@ -77,7 +78,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/">
-                          <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                          <span class="nav-link-icon d-md-none d-lg-inline-block">
                               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-article" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                   <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
