@@ -26,6 +26,15 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if(env('APP_ENV')=== 'production'){
+            $url = \Request::url();
+            $check = strstr($url, "http://");
+            if($check){
+                $newUrl = str_replace("http", "https", $url);
+                header("Location:" . $newUrl);
+            }
+        }
+
         $this->configureRateLimiting();
 
         $this->routes(function () {
@@ -36,6 +45,7 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
+        parent::boot();
     }
 
     /**

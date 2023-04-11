@@ -1,14 +1,12 @@
-@extends('partials.app')
-    
-@section('content')
 
-
-    <div class="page">
-        <div class="container-xl">
-            <div class="page-wrapper">
-                <div class="page-header d-print-none">
-                    <div class="container-xl">
-                         <div class="row g-2 align-items-center">
+<div class="container">
+    <div class="modal modal-blur fade" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="ModalLabel">Galvijų Pridėjimas</h1>
+            </div>
+        
     <form action="{{url("edit/".$cattles->id)}}" method="POST">
         @csrf 
         @method('PUT')
@@ -81,4 +79,3 @@
     </div>
 
 
-@endsection

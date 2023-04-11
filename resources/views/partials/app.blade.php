@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    
     <link href="{{asset('./dist/css/tabler.min.css?1674944402') }}" rel="stylesheet"/>
     <link href="{{asset('./dist/css/tabler-flags.min.css?1674944402') }}" rel="stylesheet"/>
     <link href="{{asset('./dist/css/tabler-payments.min.css?1674944402') }}" rel="stylesheet"/>
@@ -22,6 +23,8 @@
         body {
             font-feature-settings: "cv03", "cv04", "cv11";
         }
+        canvas.drawing, canvas.drawingBuffer
+        { position: absolute; left: 0; top: 0; }
       </style>
 </head>
     <body>
@@ -165,12 +168,14 @@
         <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
         <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js"></script>
         <script src="./dist/js/demo-theme.min.js?1674944402"></script>
         <script src="path/to/chartjs/dist/Chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="{{ asset('/js/chart.js') }}" defer></script>
         <script src="{{ asset('/js/scripts.js') }}" defer></script>
         <script src="{{ asset('/js/veislescript.js') }}"></script>
+        <script src="{{ asset('/js/quagga.min.js') }}"></script>
     
 
         <script>

@@ -38,7 +38,7 @@ Route::put('editspec/{id}',[VeisleController::Class,'edit']);
 // Datatable
 Route::get('datatable',[DisplayDataController::Class, 'show'])-> name('data.show');
 Route::post('datatable', [DisplayDataController::class, 'destroy'])->name('delete.cattle');
-
+ 
 
  Route::get('specdatatable',[SPDataController::Class, 'show'])-> name('veisl.show');
  Route::post('specdatatable', [SPDataController::class, 'destroy'])->name('delete.veisl');
@@ -46,7 +46,8 @@ Route::post('datatable', [DisplayDataController::class, 'destroy'])->name('delet
  Route::get('importdata', [ImportController::Class, 'index']);
  Route::post('cattle-import', [ImportController::Class, 'import'])->name('cattle.import');
 
- Route::get('/scan', [ScanController::Class, 'index']);
+Route::get('/scan', [ScanController::Class, 'index']);
+//  Route::post('/scan/upload', [ScanController::Class, 'upload'])->name('image.upload');
 
  Route::get('chart', [ChartController::class, 'index']);
  

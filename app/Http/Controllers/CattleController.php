@@ -14,7 +14,7 @@ class CattleController extends Controller
     {
     
         $data=Cattle::all();  
-        $data2=Veisle::all()->unique('veislname')->toArray();
+        $data2=Veisle::all()->unique('veislname');
 
         $params =
         [
@@ -46,60 +46,84 @@ class CattleController extends Controller
     {
         $date1 = Carbon::parse($request->input('GimimoData'));
         $date2 = Carbon::today();
-        $monthdate = $date1->diffInMonths($date2);
+        // $monthdate = $date1->diffInMonths($date2);
        
-        $this->validate($request,[
+        $validated = $this->validate($request,[
             'GalvijoNr' => 'required|unique:cattle',
+            'MotinosNr' => 'nullable',
+            'Tipas' => 'nullable',
             'GimimoData' => 'required',
+            'Amzius' => 'nullable',
             'Veisl' => 'required',
+            'PM' => 'nullable',
+            'Versing' => 'nullable',
+            'SeklData' => 'nullable',
+            'VersData' => 'nullable',
+            'LastVers' => 'nullable',
+            'AtsivestVers' => 'nullable',
 
         ]);
+        $validated['Amzius'] = $date1->diffInMonths($date2);
+       if($validated['SeklData'] !== null){
+            $validated['VersData'] = Carbon::parse($validated['SeklData'])->addmonth(9);
+       }
+        if($validated['Tipas'] === Cattle::CATTLE_TYPE_2){
+            $validated['Versing'] = 'Ne';
+            $validated['SeklData'] = null;
+            $validated['VersData'] = null;
+            $validated['LastVers'] = null;
+        } 
+        if($validated['Versing'] === Cattle::CATTLE_V_N){
+            $validated['SeklData'] = null;
+            $validated['LastVers'] = null;
+            $validated['SeklData'] = null;
+            $validated['VersData'] = null;
+        }
+      
+            // $versing = $request->input('versing');
+            // $SeklData = $request->input('SeklData');
+            // $vdate = $request->input('VersData');
+            // $LastVers= $request->input('LastVers');
+            // $AtsivestVers= $request->input('AtsivestVers');
+            // $vdate = Carbon::parse('SeklData')->addMonth(9);
+
+        //    if(($request->input('Tipas') === Cattle::CATTLE_TYPE_2)){
+        //        $versing = 'Ne';
+        //        $SeklData = null;
+        //        $vdate = null;
+        //        $LastVers = null;
+               
+        //    }
+            // if($request->input('Tipas') === Cattle::CATTLE_TYPE_3){
+            //    $LastVers = null;
+            // }
+            // if($request->input('versing') === Cattle::CATTLE_V_N){
+            //     $SeklData = null;
+            //     $vdate = null;
+            //     $LastVers = null;
+            // }
+            // if($request->input('SeklData') == null){
+            //     $vdate = null;
+            // }
+
        
-            
+        // $catl = new Cattle;
+        // $catl->GalvijoNr = $request->input('GalvijoNr');
+        // $catl->MotinosNr = $request->input('MotinosNr');
+        // $catl->Tipas = $request->input('Tipas');
+        // $catl->GimimoData = $request->input('GimimoData');
+        // $catl->Amzius = $monthdate;
+        // $catl->Veisl = $request->input('Veisl');
+        // $catl->PM = $request->input('PM');
+        // $catl->versing = $versing;
+        // $catl->SeklData= $SeklData;
+        // $catl->VersData= $vdate;
+        // $catl->LastVers= $LastVers;
+        // $catl->AtsivestVers= $AtsivestVers;
 
-            $versing = $request->input('versing');
-            $SeklData = $request->input('SeklData');
-            $vdate = $request->input('VersData');
-            $LastVers= $request->input('LastVers');
-            $AtsivestVers= $request->input('AtsivestVers');
-            $vdate = Carbon::parse($SeklData)->addMonth(9);
+        // $catl->save();
 
-           if(($request->input('Tipas') === Cattle::CATTLE_TYPE_2)){
-               $versing = 'Ne';
-               $SeklData = null;
-               $vdate = null;
-               $LastVers = null;
-               $vdate = null;
-           }
-            if($request->input('Tipas') === Cattle::CATTLE_TYPE_3){
-               $LastVers = null;
-            }
-            if($request->input('versing') === Cattle::CATTLE_V_N){
-                $SeklData = null;
-                $vdate = null;
-                $LastVers = null;
-            }
-            if($request->input('SeklData') == null){
-                $vdate = null;
-            }
-
-        
-        $catl = new Cattle;
-        $catl->GalvijoNr = $request->input('GalvijoNr');
-        $catl->MotinosNr = $request->input('MotinosNr');
-        $catl->Tipas = $request->input('Tipas');
-        $catl->GimimoData = $request->input('GimimoData');
-        $catl->Amzius = $monthdate;
-        $catl->Veisl = $request->input('Veisl');
-        $catl->PM = $request->input('PM');
-        $catl->versing = $versing;
-        $catl->SeklData= $SeklData;
-        $catl->VersData= $vdate;
-        $catl->LastVers= $LastVers;
-        $catl->AtsivestVers= $AtsivestVers;
-
-        $catl->save();
-    
+       Cattle::create($validated);
        return redirect('/')->with('success','Duomenys sėkmingai išsaugoti');
     }
 
