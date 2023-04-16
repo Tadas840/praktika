@@ -6,8 +6,22 @@
    
     <div id="scanner-container"></div>
     <input type="button" id="btn" value="Start/Stop the scanner" />
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <p id="output">Some text in the modal.</p>
+        </div>
+      </div>
 
     <script>
+function debounce(func, delay) {
+    let timerId;
+    return function (...args) {
+        clearTimeout(timerId);
+        timerId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    }
+}
         var _scannerIsRunning = false;
 
         function startScanner() {
@@ -85,14 +99,16 @@
             });
 
 
-            Quagga.onDetected(function (result) {
-                console.log("Barcode detected and processed : [" + "LT" + result.codeResult.code + "]", result);
-                executing.stop();
-            });
+            Quagga.onDetected(debounce(function (result) {
+                const modal = document.getElementById('myModal');
+                modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+                console.log("Barcode detected and processed : [", result.codeResult.code ,"]", result);
+                document.getElementById("output").innerHTML = result.codeResult.code;
+          
+            }, 100));
         }
 
 
-        // Start/stop scanner
         document.getElementById("btn").addEventListener("click", function () {
             if (_scannerIsRunning) {
                 Quagga.stop();
