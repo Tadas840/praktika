@@ -11,6 +11,12 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header"></div>
+            <div>
+
+                <p id="output"></p>
+
+            </div>
+
             </div>
           </div>
         </div>
