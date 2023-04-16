@@ -102,7 +102,7 @@ function debounce(func, delay) {
             Quagga.onDetected(debounce(function (result) {
                 const modal = document.getElementById('myModal');
                 modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-                console.log("Barcode detected and processed : [", result.codeResult.code ,"]", result);
+                console.log("Barcode detected and processed s: [", result.codeResult.code ,"]", result);
                 document.getElementById("output").innerHTML = result.codeResult.code;
           
             }, 100));
