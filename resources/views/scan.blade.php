@@ -6,11 +6,16 @@
    
     <div id="scanner-container"></div>
     <input type="button" id="btn" value="Start/Stop the scanner" />
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <p id="output">Some text in the modal.</p>
+    <div class="container">
+        <div class="modal modal-blur fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header"></div>
+            </div>
+          </div>
         </div>
-      </div>
+    </div>
+    
 
     <script>
 function debounce(func, delay) {
@@ -102,7 +107,7 @@ function debounce(func, delay) {
             Quagga.onDetected(debounce(function (result) {
                 const modal = document.getElementById('myModal');
                 modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-                console.log("Barcode detected and processed s: [", result.codeResult.code ,"]", result);
+                console.log("Barcode detected and processed: [", result.codeResult.code ,"]", result);
                 document.getElementById("output").innerHTML = result.codeResult.code;
           
             }, 100));
