@@ -3,7 +3,7 @@
 @section('content')
 <script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js"></script>
 <body>
-    <!-- Div to show the scanner -->
+   
     <div id="scanner-container"></div>
     <input type="button" id="btn" value="Start/Stop the scanner" />
 
@@ -17,22 +17,19 @@
                     type: "LiveStream",
                     target: document.querySelector('#scanner-container'),
                     constraints: {
-                        width: 480,
-                        height: 320,
+                        width: 640,
+                        height: 480,
                         facingMode: "environment"
+                        
                     },
+                },
+                locator: {
+                    patchSize: "x-large",
+                    halfsample: true
                 },
                 decoder: {
                     readers: [
-                        "code_128_reader",
-                        "ean_reader",
-                        "ean_8_reader",
-                        "code_39_reader",
-                        "code_39_vin_reader",
-                        "codabar_reader",
-                        "upc_reader",
-                        "upc_e_reader",
-                        "i2of5_reader"
+                        "code_128_reader"
                     ],
                     debug: {
                         showCanvas: true,
@@ -49,7 +46,7 @@
                         }
                     }
                 },
-
+            
             }, function (err) {
                 if (err) {
                     console.log(err);
@@ -59,7 +56,7 @@
                 console.log("Initialization finished. Ready to start");
                 Quagga.start();
 
-                // Set flag to is running
+
                 _scannerIsRunning = true;
             });
 
@@ -89,7 +86,8 @@
 
 
             Quagga.onDetected(function (result) {
-                console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
+                console.log("Barcode detected and processed : [" + "LT" + result.codeResult.code + "]", result);
+                executing.stop();
             });
         }
 
@@ -102,6 +100,7 @@
                 startScanner();
             }
         }, false);
+    
     </script>
 </body>
 
