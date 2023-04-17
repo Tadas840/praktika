@@ -4,16 +4,19 @@
 <script src="https://cdn.rawgit.com/serratus/quaggaJS/0420d5e0/dist/quagga.min.js"></script>
 <body>
    
+    <h2 class="page-title">
+        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalius">Pridėti Galviją</a><br> 
+    </h2>
     <div id="scanner-container"></div>
     <input type="button" id="btn" value="Start/Stop the scanner" />
     <div class="container">
-        <div class="modal modal-blur fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal modal-blur fade" id="modalius" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header"></div>
             <div>
 
-                <p id="output"></p>
+                <p id="output">asdasdw</p>
 
             </div>
 
@@ -111,9 +114,7 @@ function debounce(func, delay) {
 
 
             Quagga.onDetected(debounce(function (result) {
-                const modal = document.getElementById('myModal');
-                modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-                console.log("Barcode detected and processed: [", result.codeResult.code ,"]", result);
+               $('#modalius').modal('show');
                 document.getElementById("output").innerHTML = result.codeResult.code;
           
             }, 100));
