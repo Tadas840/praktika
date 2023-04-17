@@ -33,10 +33,6 @@
     Window.prototype.remoteModal = remoteModal;
   })();
   
-  $(function() {
-     window.remoteModal('#modal-team');
-  });
-
 function debounce(func, delay) {
     let timerId;
     return function (...args) {
@@ -139,3 +135,8 @@ function debounce(func, delay) {
                 startScanner();
             }
         }, false);
+
+        $(function() {
+            document.getElementsByName('GalvijoNr').innerHTML = fullcode; 
+            window.remoteModal('#modal-team');
+         });
