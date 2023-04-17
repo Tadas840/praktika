@@ -1,4 +1,5 @@
 function functioncalc(){
-    var x = document.getElementById("output").textContent;
+    sessionStorage.setItem("barcode", fullcode);
+    var x = sessionStorage.getItem("barcode");
     console.log(x);
 }
