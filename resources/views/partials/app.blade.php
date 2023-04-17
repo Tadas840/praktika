@@ -176,6 +176,7 @@
         <script src="{{ asset('/js/scripts.js') }}" defer></script>
         <script src="{{ asset('/js/veislescript.js') }}"></script>
         <script src="{{ asset('/js/quagga.min.js') }}"></script>
+        <script src="{{ asset('/js/scanner.js') }}"></script>
     
 
         <script>
