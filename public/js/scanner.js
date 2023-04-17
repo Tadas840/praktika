@@ -101,3 +101,6 @@ function debounce(func, delay) {
             }
         }, false);
     
+        function OpenCattleModal(){
+            $('#modal-team').modal(show);
+        }

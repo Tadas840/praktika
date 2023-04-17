@@ -20,7 +20,7 @@
             <div class="modal-footer">
               <div class="w-100">
                 <div class="row">
-                  <div class="col"><a href="#" class="btn btn-success w-100" data-bs-dismiss="modal">
+                  <div class="col"><a href="#" onclick="OpenCattleModal()" class="btn btn-success w-100" data-bs-dismiss="modal">
                       Pridėti
                     </a></div>
                 </div>
