@@ -99,45 +99,60 @@ function debounce(func, delay) {
                 _scannerIsRunning = true;
             });
 
-            Quagga.onProcessed(function (result) {
-                var drawingCtx = Quagga.canvas.ctx.overlay,
-                drawingCanvas = Quagga.canvas.dom.overlay;
+            // Quagga.onProcessed(function (result) {
+            //     var drawingCtx = Quagga.canvas.ctx.overlay,
+            //     drawingCanvas = Quagga.canvas.dom.overlay;
 
-                if (result) {
-                    if (result.boxes) {
-                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                        result.boxes.filter(function (box) {
-                            return box !== result.box;
-                        }).forEach(function (box) {
-                            Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 2 });
-                        });
-                    }
+            //     if (result) {
+            //         if (result.boxes) {
+            //             drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+            //             result.boxes.filter(function (box) {
+            //                 return box !== result.box;
+            //             }).forEach(function (box) {
+            //                 Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 2 });
+            //             });
+            //         }
 
-                    if (result.box) {
-                        Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 2 });
-                    }
+            //         if (result.box) {
+            //             Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 2 });
+            //         }
 
-                    if (result.codeResult && result.codeResult.code) {
-                        Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 3 });
-                    }
-                }
-            });
+            //         if (result.codeResult && result.codeResult.code) {
+            //             Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 3 });
+            //         }
+            //     }
+            // });
 
 
             Quagga.onDetected(debounce(function (result) {
                fullcode = "LT" + result.codeResult.code;
-               $('#modalius').modal('show');
                 document.getElementById("output").innerHTML = fullcode;
+                localStorage.setItem("barcode", fullcode);
+              
+                // var table = $('.data-table').DataTable();
+                // var searchvalue = fullcode;
+                // var columnindex = 0;
+                // table.column(columnindex).search(searchvalue);
+                // var val = table.search(searchvalue).draw().data();
+                // console.log(val);
+                // if(!val){
+                    $('#modalius').modal('show');
+                // }
+                // else{
+                //    console.log('yra')
+            // }
 
-                return fullcode;
-            }, 100));
+             }, 100));
         }
 
 
         document.getElementById("btn").addEventListener("click", function () {
             if (_scannerIsRunning) {
                 Quagga.stop();
+                location.reload();
             } else {
                 startScanner();
+                document.getElementById('btn').style.background = "#FF0000";
+                document.getElementById('btn').value = "Stabdyti"
             }
         }, false);
