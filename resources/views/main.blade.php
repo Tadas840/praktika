@@ -20,7 +20,8 @@
           </div>
       @endif
           </div>
-
+          <button onclick="functioncalc()">Test</button>
+<div id="test">dddddddddddddddddd</div>
     <div class="container-xl">
     <div class="page-wrapper">
         <div class="page-header d-print-none">

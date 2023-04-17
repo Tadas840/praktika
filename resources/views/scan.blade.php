@@ -2,6 +2,9 @@
 @extends('partials.app')
 @section('content')
 <body>
+    <a href="/#modal-team" class="btn btn-success w-100">
+        Pridėti
+    </a>
     <div id="scanner-container"></div>
     <input type="button" id="btn" value="Start/Stop the scanner" />
     <div class="modal modal-blur fade" id="modalius" tabindex="-1" role="dialog" aria-hidden="true">

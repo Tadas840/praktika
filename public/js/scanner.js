@@ -1,3 +1,4 @@
+
 (function() {
     'use strict';
   
@@ -32,6 +33,10 @@
     }
     Window.prototype.remoteModal = remoteModal;
   })();
+
+  $(function() {
+    window.remoteModal('#modal-team');
+ });
   
 function debounce(func, delay) {
     let timerId;
@@ -120,10 +125,11 @@ function debounce(func, delay) {
 
 
             Quagga.onDetected(debounce(function (result) {
-                var fullcode = "LT" + result.codeResult.code;
+               fullcode = "LT" + result.codeResult.code;
                $('#modalius').modal('show');
                 document.getElementById("output").innerHTML = fullcode;
-          
+
+                return fullcode;
             }, 100));
         }
 
@@ -135,8 +141,3 @@ function debounce(func, delay) {
                 startScanner();
             }
         }, false);
-
-        $(function() {
-            document.getElementsByName('GalvijoNr').innerHTML = fullcode; 
-            window.remoteModal('#modal-team');
-         });
