@@ -137,9 +137,9 @@ function debounce(func, delay) {
         data: {id: fullcode, _token: '{{csrf_token()}}'},
         success: function(response) {
             if (response.exists) {
-                $('#modalius').modal('show');
+                $('#modalius2').modal('show');
             } else {
-                console.log('nop');
+                $('#modalius').modal('show');
             }
         },
     });
