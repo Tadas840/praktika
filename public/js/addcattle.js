@@ -1,23 +1,19 @@
 
 var x = localStorage.getItem("barcode");
+localStorage.setItem("barcode2", "LT000006503298");
+var v = localStorage.getItem("barcode2");
 document.getElementById("GalvijoNr").value = x;
-console.log(senddata);
-function myfunction(){
-var c = 'LT000006504444';
-     $.ajax({
-        processing: true,
-        serverSide: true,
-        url: senddata,
-        type: 'GET',
-        data: {id: c, _token: '{{csrf_token()}}'},
-        success: function(response) {
-            if (response.exists) {
-               console.log('exists');
-            } else {
-                console.log('nop');
-            }
-        },
-    });
-}
-localStorage.clear();
+
+function callsearch(){
+
+    var table = $('.data-table').DataTable();
+    var searchvalue = v;
+    var columnindex = 0;
+    table.column(columnindex).search(searchvalue);
+    table.search(searchvalue).draw().data();
+  };
+
+
+
+// localStorage.clear();
 

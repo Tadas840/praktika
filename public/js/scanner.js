@@ -139,18 +139,13 @@ function debounce(func, delay) {
         success: function(response) {
             if (response.exists) {
                 $('#modalius2').modal('show');
+                window.location.href = "/";
             } else {
                 $('#modalius').modal('show');
             }
         },
     });
-              function lookup(){
-                var table = $('.data-table').DataTable();
-                var searchvalue = fullcode;
-                var columnindex = 0;
-                table.column(columnindex).search(searchvalue);
-                table.search(searchvalue).draw().data();
-              }
+             
              }, 100));
         }
 

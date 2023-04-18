@@ -2,7 +2,7 @@
 @extends('partials.app')
 @section('content')
 <body>
-  <button onclick="myfunction()">asd</button>
+  <button onclick="callsearch()">asd</button>
     <div id="scanner-container"></div>
     <input type="button" class="btn btn-success w-100" id="btn" value="Pradėti" />
     <div class="modal modal-blur fade" id="modalius" tabindex="-1" role="dialog" aria-hidden="true">
