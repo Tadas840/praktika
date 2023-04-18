@@ -128,6 +128,21 @@ function debounce(func, delay) {
                fullcode = "LT" + result.codeResult.code;
                 document.getElementById("output").innerHTML = fullcode;
                 localStorage.setItem("barcode", fullcode);
+
+     $.ajax({
+        processing: true,
+        serverSide: true,
+        url: senddata,
+        type: 'GET',
+        data: {id: fullcode, _token: '{{csrf_token()}}'},
+        success: function(response) {
+            if (response.exists) {
+                $('#modalius').modal('show');
+            } else {
+                console.log('nop');
+            }
+        },
+    });
               
                 // var table = $('.data-table').DataTable();
                 // var searchvalue = fullcode;
@@ -136,7 +151,7 @@ function debounce(func, delay) {
                 // var val = table.search(searchvalue).draw().data();
                 // console.log(val);
                 // if(!val){
-                    $('#modalius').modal('show');
+                    // $('#modalius').modal('show');
                 // }
                 // else{
                 //    console.log('yra')

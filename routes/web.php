@@ -20,7 +20,7 @@ use App\Http\Controllers\RecordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/check', [RecordController::class], 'index');
+
 // Cattle
 Route::resource('main', CattleController::class);
 Route::get('/',[CattleController::class,'index']);
@@ -58,3 +58,4 @@ Route::get('/scan', [ScanController::class, 'index']);
  Route::get('navbar', [AuthController::class, 'dashboard']);
  Route::get('logout', [AuthController::class, 'logout']);
 
+ Route::resource('/check', RecordController::class);

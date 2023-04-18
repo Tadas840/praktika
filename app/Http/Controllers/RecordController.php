@@ -4,7 +4,8 @@
     
   use Illuminate\Http\Request;
   use App\Models\Cattle;
-    
+  use Illuminate\Support\Facades\DB;
+  
   class RecordController extends Controller
   {
       /**
@@ -12,12 +13,17 @@
        *
        * @return \Illuminate\Http\Response
        */
-      public function index()
+      public function index(Request $request)
       {
-          $isExist = Cattle::all();
-
-          dd($isExist);
-          
-          return view('/check');
+        $id = $request -> id;
+        // $id = $request->input('LT000006503298*');
+        $record = Cattle::where('GalvijoNr', $id)->first();
+    
+        if ($record) {
+            return response()->json(['exists' => true]);
+        } else {
+            return response()->json(['exists' => false]);
+        }
+    }
       }
-  }
+  

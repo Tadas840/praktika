@@ -1,25 +1,23 @@
 
 var x = localStorage.getItem("barcode");
 document.getElementById("GalvijoNr").value = x;
-$(document).ready(function(){
-    $.ajax({
-        url: "/check-record",
-        method: "POST",
-        data: { searchValue : x},
-        dataType: "json",
+console.log(senddata);
+function myfunction(){
+var c = 'LT000006504444';
+     $.ajax({
+        processing: true,
+        serverSide: true,
+        url: senddata,
+        type: 'GET',
+        data: {id: c, _token: '{{csrf_token()}}'},
         success: function(response) {
-            if (response.status == "success") {
-                // Record exists, do something
-                console.log("Record exists in database!");
+            if (response.exists) {
+               console.log('exists');
             } else {
-                // Record does not exist, do something
-                console.log("Record does not exist in database!");
+                console.log('nop');
             }
         },
-        error: function() {
-            console.log("Error occurred while checking record in database!");
-        }
     });
-})
+}
 localStorage.clear();
 
