@@ -127,6 +127,7 @@ function debounce(func, delay) {
             Quagga.onDetected(debounce(function (result) {
                fullcode = "LT" + result.codeResult.code;
                 document.getElementById("output").innerHTML = fullcode;
+                document.getElementById("output2").innerHTML = fullcode;
                 localStorage.setItem("barcode", fullcode);
 
      $.ajax({
@@ -143,20 +144,13 @@ function debounce(func, delay) {
             }
         },
     });
-              
-                // var table = $('.data-table').DataTable();
-                // var searchvalue = fullcode;
-                // var columnindex = 0;
-                // table.column(columnindex).search(searchvalue);
-                // var val = table.search(searchvalue).draw().data();
-                // console.log(val);
-                // if(!val){
-                    // $('#modalius').modal('show');
-                // }
-                // else{
-                //    console.log('yra')
-            // }
-
+              function lookup(){
+                var table = $('.data-table').DataTable();
+                var searchvalue = fullcode;
+                var columnindex = 0;
+                table.column(columnindex).search(searchvalue);
+                table.search(searchvalue).draw().data();
+              }
              }, 100));
         }
 
