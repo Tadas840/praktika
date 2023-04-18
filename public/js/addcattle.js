@@ -1,7 +1,5 @@
 
 var x = localStorage.getItem("barcode");
-localStorage.setItem("barcode2", "LT000006503298");
-var v = localStorage.getItem("barcode2");
 document.getElementById("GalvijoNr").value = x;
 
 // function callsearch(){
@@ -23,7 +21,6 @@ document.getElementById("GalvijoNr").value = x;
 //     tabler.column(columnindex).search(value);
 //     tabler.search(value).draw().data();
 // }
-console.log(value);
 
 // localStorage.clear();
 
