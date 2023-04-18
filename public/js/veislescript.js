@@ -6,6 +6,7 @@ $(function () {
     var table = $('.data-tablet').DataTable({
         processing: true,
         serverSide: true,
+        paging: false,
         ajax: pathshowspd,
         responsive: true,
         maintainAspectRatio: false,

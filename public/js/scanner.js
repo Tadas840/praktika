@@ -138,10 +138,10 @@ function debounce(func, delay) {
         data: {id: fullcode, _token: '{{csrf_token()}}'},
         success: function(response) {
             if (response.exists) {
-                $('#modalius2').modal('show');
-                window.location.href = "/";
+            $('#modalius2').modal('show');
+
             } else {
-                $('#modalius').modal('show');
+            $('#modalius').modal('show');
             }
         },
     });

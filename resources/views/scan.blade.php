@@ -46,7 +46,7 @@
               <div class="w-100">
                 <div class="row">
                   <div class="col">
-                    <a href="/#" onclick="lookup()" class="btn btn-success w-100">
+                    <a onclick="callsearch()" class="btn btn-success w-100">
                         Peržiūrėti
                     </a>
                   </div>

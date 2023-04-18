@@ -1,4 +1,14 @@
 
+    function callsearch(){
+        // var table = $('.data-table').DataTable();
+        var searchvalue = x;
+        // var columnindex = 0;
+        // table.column(columnindex).search(searchvalue);
+        // table.search(searchvalue).draw().data();
+        var mylink = "/?value=" + searchvalue;
+        window.location.href = mylink;
+        }
+
 $(function () {
   
   var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
@@ -24,7 +34,18 @@ $(function () {
           {data: 'AtsivestVers', name: 'AtsivestVers'},
           
       ]
-  });
+  })
+
+  
+    const urlparams = new URLSearchParams(window.location.search);
+    const value = urlparams.get('value');
+    
+    if(value != null){
+        var columnindex = 0;
+        table.column(columnindex).search(value);
+        table.search(value).draw().data();
+    }
+  ;
   $('.data-table').on('click','.delete',function(){
           var id = $(this).data('id');
           var deleteConfirm = confirm("Ar tikrai norite ištrinti šį įrašą?");
