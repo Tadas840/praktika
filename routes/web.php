@@ -49,6 +49,7 @@ Route::get('/scan', [ScanController::class, 'index']);
 //  Route::post('/scan/upload', [ScanController::Class, 'upload'])->name('image.upload');
 
  Route::get('chart', [ChartController::class, 'index']);
+ Route::get('start',[DisplayDataController::class,'index']);
  
 
  Route::get('login', [AuthController::class, 'index']);

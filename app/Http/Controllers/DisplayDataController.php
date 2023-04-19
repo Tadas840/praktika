@@ -15,6 +15,7 @@ class DisplayDataController extends Controller
      */
     public function index()
     {    
+        return view('start');
     }
     
 
