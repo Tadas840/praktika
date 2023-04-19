@@ -8,6 +8,7 @@ use App\Models\Veisle;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class CattleImport implements ToModel,  WithStartRow
 {
@@ -36,7 +37,8 @@ class CattleImport implements ToModel,  WithStartRow
 
         $data = new Cattle([
             $date = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[6]),
-            'GalvijoNr' => $row[2],
+             $modified = Str::remove('*',$row[2]),
+            'GalvijoNr' => $modified,
             'MotinosNr' => null,
             'Tipas' => $row[4],
             'Veisl' => $v->veislname,
