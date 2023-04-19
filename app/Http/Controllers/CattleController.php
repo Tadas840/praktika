@@ -49,8 +49,8 @@ class CattleController extends Controller
         // $monthdate = $date1->diffInMonths($date2);
        
         $validated = $this->validate($request,[
-            'GalvijoNr' => 'required|unique:cattle',
-            'MotinosNr' => 'nullable',
+            'GalvijoNr' => 'required|unique:cattle|min:14',
+            'MotinosNr' => 'nullable|min:14',
             'Tipas' => 'nullable',
             'GimimoData' => 'required',
             'Amzius' => 'nullable',
@@ -154,6 +154,7 @@ class CattleController extends Controller
      */
     public function edit(Request $request)
     {
+     
        $date1 = Carbon::parse($request->input('GimimoData'));
        $date2 = Carbon::today();
        $monthdate = $date1->diffInMonths($date2);
