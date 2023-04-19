@@ -1,7 +1,7 @@
 
 var x = localStorage.getItem("barcode");
 document.getElementById("GalvijoNr").value = x;
-
+localStorage.clear();
 // function callsearch(){
 // // var table = $('.data-table').DataTable();
 // var searchvalue = x;
@@ -22,5 +22,5 @@ document.getElementById("GalvijoNr").value = x;
 //     tabler.search(value).draw().data();
 // }
 
-// localStorage.clear();
+
 

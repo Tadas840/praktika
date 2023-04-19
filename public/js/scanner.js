@@ -48,6 +48,7 @@ function debounce(func, delay) {
     }
 };
         var _scannerIsRunning = false;
+        var _barcodeDetected = false;
 
         function startScanner() {
             Quagga.init({
@@ -123,13 +124,13 @@ function debounce(func, delay) {
             //     }
             // });
 
-
-            Quagga.onDetected(debounce(function (result) {
+            Quagga.onDetected(function (result) {
+                if(!_barcodeDetected){
+                _barcodeDetected = true;
                fullcode = "LT" + result.codeResult.code;
                 document.getElementById("output").innerHTML = fullcode;
                 document.getElementById("output2").innerHTML = fullcode;
                 localStorage.setItem("barcode", fullcode);
-
      $.ajax({
         processing: true,
         serverSide: true,
@@ -139,16 +140,21 @@ function debounce(func, delay) {
         success: function(response) {
             if (response.exists) {
             $('#modalius2').modal('show');
-
             } else {
             $('#modalius').modal('show');
             }
         },
     });
              
-             }, 100));
+        }},);
         }
 
+        $('#modalius2').on('hidden.bs.modal', function(){
+            location.reload();
+        })
+        $('#modalius').on('hidden.bs.modal', function(){
+            location.reload();
+        })
 
         document.getElementById("btn").addEventListener("click", function () {
             if (_scannerIsRunning) {
@@ -158,5 +164,6 @@ function debounce(func, delay) {
                 startScanner();
                 document.getElementById('btn').style.background = "#FF0000";
                 document.getElementById('btn').value = "Stabdyti"
+                _barcodeDetected = false;
             }
         }, false);

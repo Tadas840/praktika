@@ -54,7 +54,7 @@ class DisplayDataController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
                     
-                        $updateButton = "<a href='#' class='btn btn-sm btn-info' data-toggle='modal' data-target='#edit-modal' data-id='".$row->id."'><i class='fa fa-edit'></i></a>";
+                        $updateButton = "<a href='/edit/{$row->id}' class='btn btn-sm btn-info' data-id='".$row->id."'><i class='fa fa-edit'></i></a>";
                         $deleteButton = "<a class='btn btn-sm btn-danger delete' data-id='".$row->id."'><i class='fa fa-times'></i></a>";
          
                          return $updateButton." ".$deleteButton;

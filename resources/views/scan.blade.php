@@ -19,7 +19,7 @@
               <div class="w-100">
                 <div class="row">
                   <div class="col">
-                    <a href="/#modal-team" class="btn btn-success w-100">
+                    <a onclick="calladd()" class="btn btn-success w-100">
                         Pridėti
                     </a>
                   </div>

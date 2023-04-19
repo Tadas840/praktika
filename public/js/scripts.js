@@ -1,13 +1,17 @@
-
     function callsearch(){
         // var table = $('.data-table').DataTable();
-        var searchvalue = x;
+        var searchvalue = fullcode;
         // var columnindex = 0;
         // table.column(columnindex).search(searchvalue);
         // table.search(searchvalue).draw().data();
         var mylink = "/?value=" + searchvalue;
         window.location.href = mylink;
+        // localStorage.clear();
         }
+    function calladd(){
+        var mylink = "/#modal-team";
+        window.location.href = mylink;
+    }
 
 $(function () {
   

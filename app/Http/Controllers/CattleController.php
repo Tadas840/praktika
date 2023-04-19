@@ -154,18 +154,49 @@ class CattleController extends Controller
      */
     public function edit(Request $request)
     {
+       $date1 = Carbon::parse($request->input('GimimoData'));
+       $date2 = Carbon::today();
+       $monthdate = $date1->diffInMonths($date2);
+
        $data = Cattle::find($request->id);
-        $data->GalvijoNr=$request->GalvijoNr;
-        $data->MotinosNr=$request->input('MotinosNr');
-        $data->Tipas=$request->input('Tipas');
-        $data->GimimoData=$request->input('GimimoData');
-        $data->Veisl=$request->input('Veisl');
-        $data->PM=$request->input('PM');
-        $data->versing=$request->input('versing');
-        $data->VersData=$request->input('VersData');
-        $data->SeklData=$request->input('SeklData');
-        $data->LastVers=$request->input('LastVers');
-        $data->AtsivestVers=$request->input('AtsivestVers');
+       $versing = $request->input('versing');
+       $SeklData = $request->input('SeklData');
+       $vdate = $request->input('VersData');
+       $LastVers= $request->input('LastVers');
+       $AtsivestVers= $request->input('AtsivestVers');
+       $vdate = Carbon::parse($SeklData)->addMonth(9); 
+       if(($request->input('Tipas') === Cattle::CATTLE_TYPE_2)){
+               $versing = 'Ne';
+               $SeklData = null;
+               $vdate = null;
+               $LastVers = null;
+               
+           }
+            if($request->input('Tipas') === Cattle::CATTLE_TYPE_3){
+               $LastVers = null;
+            }
+            if($request->input('versing') === Cattle::CATTLE_V_N){
+                $SeklData = null;
+                $vdate = null;
+                $LastVers = null;
+            }
+            if($request->input('SeklData') == null){
+                $vdate = null;
+            }
+
+
+        $data->GalvijoNr = $request->input('GalvijoNr');
+        $data->MotinosNr = $request->input('MotinosNr');
+        $data->Tipas = $request->input('Tipas');
+        $data->GimimoData = $request->input('GimimoData');
+        $data->Amzius = $monthdate;
+        $data->Veisl = $request->input('Veisl');
+        $data->PM = $request->input('PM');
+        $data->versing = $versing;
+        $data->SeklData= $SeklData;
+        $data->VersData= $vdate;
+        $data->LastVers= $LastVers;
+        $data->AtsivestVers= $AtsivestVers;
         $data->save();
         return redirect('main');
     }

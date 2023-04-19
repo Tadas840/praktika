@@ -1,12 +1,12 @@
+@extends('partials.app')
 
-<div class="container">
-    <div class="modal modal-blur fade" id="edit-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="ModalLabel">Galvijų Pridėjimas</h1>
-            </div>
-        
+@section('content')
+<div class="page">
+    <div class="container-xl">
+        <div class="page-wrapper">
+            <div class="page-header d-print-none">
+                <div class="container-xl">
+                     <div class="row g-2 align-items-center">
     <form action="{{url("edit/".$cattles->id)}}" method="POST">
         @csrf 
         @method('PUT')
@@ -36,7 +36,7 @@
                     <td>
                         <select name="Tipas" value="{{$cattles['Tipas']}}">
                           <option value="Karve">Karve</option>
-                          <option value="Jautis">Buliukas</option>
+                          <option value="Buliukas">Buliukas</option>
                           <option value="Telycaite">Telycaite</option>
                         </select>
                     </td>
@@ -70,12 +70,6 @@
                         </table>
     
                     </form>
-    
                      </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+                    @endsection   
+    

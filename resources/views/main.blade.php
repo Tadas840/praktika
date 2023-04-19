@@ -30,7 +30,6 @@
                  
                   <h2 class="page-title">
                     <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-team">Pridėti Galviją</a><br> 
-                    {{-- <a href="edit.blade.php" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit-modal">Update</a><br> --}}
                   </h2><br>
                   @include('datatable')
                   
