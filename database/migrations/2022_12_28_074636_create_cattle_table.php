@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('cattle', function (Blueprint $table) {
             $table->id();
             $table->string('GalvijoNr');
-            $table->integer('MotinosNr')->nullable();
+            $table->string('MotinosNr')->nullable();
             $table->string('Tipas');
             $table->date('GimimoData')->nullable();
             $table->decimal('Amzius',7,1)->nullable();;
